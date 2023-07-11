@@ -1,0 +1,19 @@
+{
+  "name": "trmd3components",
+  "version": "1.0.6",
+  "exports": {
+    "./trmd3.css": {
+      "import": "./trmd3.css"
+    },
+    "./Button": {
+      "import": "./Button/Button.tsx"
+    },
+    "./HorizontalCard": {
+      "import": "./Cards/HorizontalCard/HorizontalCard.tsx"
+    }
+    ,
+    "./Themeing": {
+      "import": "./Gizmos/Themeing.tsx"
+    }
+  }
+}
