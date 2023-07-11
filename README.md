@@ -1,4 +1,4 @@
-# TRMD3Components
+# TRMD3 Components
 
 This repository contains the minimal components required to start developing with the TRMD3 styled component design system. TRMD3 is a set of React components that are designed to work together to create a consistent and cohesive user interface.
 
