@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import { IFabProps } from "./IFabProps";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
+import React, {useState, useEffect, useRef} from "react";
+import {IFabProps} from "./IFabProps";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
 import Icon from "../../Icon/Icon";
 import Typography from "../../Typography/Typography";
 
@@ -22,7 +22,7 @@ const Fab: React.FC<IFabProps> = ({
 	const [_config] = useState(configuration || "surface");
 	const [_iconName] = useState(iconName || "edit");
 	const [_size] = useState(size || "small");
-
+	console.log("test");
 	const boxRef = useRef<HTMLButtonElement>(null);
 	const innerCircleRef = useRef<HTMLSpanElement>(null);
 
@@ -71,8 +71,7 @@ const Fab: React.FC<IFabProps> = ({
 				onMouseEnter={onMouseEnter}
 				onMouseLeave={onMouseLeave}
 				onMouseMove={onMouseMove}
-				ref={boxRef}
-			>
+				ref={boxRef}>
 				<Icon>{_iconName}</Icon>
 				<span className="fab-inner-circle" ref={innerCircleRef}></span>
 			</button>
