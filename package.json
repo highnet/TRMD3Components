@@ -1,6 +1,6 @@
 {
   "name": "trmd3components",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "exports": {
     "./trmd3.css": {
       "import": "./trmd3.css"
