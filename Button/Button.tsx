@@ -16,10 +16,10 @@
 	The onClick function is set to execute the prop function and the click function.
 */
 
-import React, { useState } from "react";
-import { IButtonProps } from "./IButtonProps";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { getPreferredScheme } from "../Gizmos/Themeing";
+import React, {useState} from "react";
+import {IButtonProps} from "./IButtonProps";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {getPreferredScheme} from "../Gizmos/Themeing";
 import Icon from "../Icon/Icon";
 import Typography from "../Typography/Typography";
 
@@ -64,8 +64,7 @@ const Button: React.FC<IButtonProps> = ({
 			onClick={onClick}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
-			onMouseMove={onMouseMove}
-		>
+			onMouseMove={onMouseMove}>
 			{_iconName && <Icon>{_iconName}</Icon>}
 			<Typography variant="text-label-large">{_children}</Typography>
 		</button>

@@ -1,17 +1,28 @@
 {
   "name": "trmd3components",
-  "version": "1.0.7",
+  "version": "1.0.16",
   "exports": {
     "./trmd3.css": {
       "import": "./trmd3.css"
+    },
+    "./BottomAppBar": {
+      "import": "./App Bars/Bottom App Bar/BottomAppBar.tsx"
+    },
+    "./TopAppBar": {
+      "import": "./App Bars/Top App Bar/TopAppBar.tsx"
+    },
+    "./Badge": {
+      "import": "./Badge/Badge.tsx"
     },
     "./Button": {
       "import": "./Button/Button.tsx"
     },
     "./HorizontalCard": {
       "import": "./Cards/HorizontalCard/HorizontalCard.tsx"
-    }
-    ,
+    },
+    "./Component": {
+      "import": "./Component/Component.tsx"
+    },
     "./Themeing": {
       "import": "./Gizmos/Themeing.tsx"
     }

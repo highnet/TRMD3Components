@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { getPreferredScheme } from "../Gizmos/Themeing";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { IComponentProps } from "./IComponentProps";
+import React, {useState} from "react";
+import {getPreferredScheme} from "../Gizmos/Themeing";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {IComponentProps} from "./IComponentProps";
 
 const Component: React.FC<IComponentProps> = ({
 	className,
@@ -31,8 +31,7 @@ const Component: React.FC<IComponentProps> = ({
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
 			onMouseMove={onMouseMove}
-			onClick={onClick}
-		>
+			onClick={onClick}>
 			{children}
 		</div>
 	);

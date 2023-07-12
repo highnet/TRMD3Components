@@ -1030,6 +1030,14 @@ html {
 }
 
 /* ==========COMPONENTS========== */
+
+.component {
+	background-color: #f8af50;
+	width: 5rem;
+	height: 5rem;
+	margin: 0 auto;
+}
+
 .visible {
 	visibility: visible;
 }
@@ -2568,7 +2576,7 @@ input[type="radio"].radio-button-input-disabled.radio-button-input-dark-theme::b
 /* ==========HORIZONTAL CARDS========== */
 
 .horizontal-card {
-	max-width: 100%;
+	max-width: 36rem;
 	height: auto;
 	overflow: clip;
 	border-radius: 1.2rem;
@@ -2685,7 +2693,7 @@ input[type="radio"].radio-button-input-disabled.radio-button-input-dark-theme::b
 	background-color: var(--m3-sys-dark-surface);
 }
 
-.horizontal-card-header-content-monogram-initial.horizontal-card-header-content-monogram-initial-light-theme {
+.horizontal-card-header-content-monogram-initial.horizontal-card-header-content-monogram-initial-dark-theme {
 	color: var(--m3-sys-dark-surface);
 	background-color: var(--m3-sys-dark-primary);
 }
