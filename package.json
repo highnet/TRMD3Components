@@ -1,6 +1,6 @@
 {
   "name": "trmd3components",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "exports": {
     "./trmd3.css": {
       "import": "./trmd3.css"
@@ -20,11 +20,107 @@
     "./HorizontalCard": {
       "import": "./Cards/HorizontalCard/HorizontalCard.tsx"
     },
+    "./StackedCard": {
+      "import": "./Cards/StackedCard/StackedCard.tsx"
+    },
+    "./Carousel": {
+      "import": "./Carousel/Carousel.tsx"
+    },
+    "./Checkbox": {
+      "import": "./Checkbox/Checkbox.tsx"
+    },
+    "./AssistChip": {
+      "import": "./Chips/AssistChips/AssistChip.tsx"
+    },
+    "./InputChip": {
+      "import": "./Chips/InputChip/InputChip.tsx"
+    },
     "./Component": {
       "import": "./Component/Component.tsx"
     },
+    "./Dialog": {
+      "import": "./Dialogs/Dialog.tsx"
+    },
+    "./HorizontalDivider": {
+      "import": "./Dividers/HorizontalDivider/HorizontalDivider.tsx"
+    },
+    "./VerticalDivider": {
+      "import": "./Dividers/VerticalDivider/VerticalDivider.tsx"
+    },
+    "./ExtendedFab": {
+      "import": "./FABs/Extended FAB/ExtendedFab.tsx"
+    },
+    "./Fab": {
+      "import": "./FABs/FAB/Fab.tsx"
+    },
+    "./Modals": {
+      "import": "./Gizmos/Modals.tsx"
+    },
+    "./Redirection": {
+      "import": "./Gizmos/Redirection.tsx"
+    },
+    "./Scrolling": {
+      "import": "./Gizmos/Scrolling.tsx"
+    },
+    "./StringBuilder": {
+      "import": "./Gizmos/StringBuilder.tsx"
+    },
     "./Themeing": {
       "import": "./Gizmos/Themeing.tsx"
+    },
+    "./Icon": {
+      "import": "./Icon/Icon.tsx"
+    },
+    "./IconButton": {
+      "import": "./IconButton/IconButton.tsx"
+    },
+    "./ListItem": {
+      "import": "./Lists/List Items/ListItem.tsx"
+    },
+    "./List": {
+      "import": "./Lists/List.tsx"
+    },
+    "./MenuItem": {
+      "import": "./Menus/MenuItem/MenuItem.tsx"
+    },
+    "./Menu": {
+      "import": "./Menus/Menu.tsx"
+    },
+    "./NavigationDrawerItem": {
+      "import": "./Navigation Drawer/Navigation Drawer Item/NavigationDrawerItem.tsx"
+    },
+    "./NavigationDrawer": {
+      "import": "./Navigation Drawer/NavigationDrawer.tsx"
+    },
+    "./NavigationRail": {
+      "import": "./NavigationRail/NavigationRail.tsx"
+    },
+    "./RadioButton": {
+      "import": "./Radio Button/RadioButton.tsx"
+    },
+    "./SegmentedButtonGroup": {
+      "import": "./Segmented Button/SegmentedButtonGroup.tsx"
+    },
+    "./SideSheet": {
+      "import": "./Sheets/Side Sheets/SideSheet.tsx"
+    },
+    "./Slider": {
+      "import": "./Sliders/Slider.tsx"
+    },
+    "./SnackBars": {
+      "import": "./SnackBars/SnackBar.tsx"
+    },
+    "./Switch": {
+      "import": "./Switch/Switch.tsx"
+    },
+    "./TextField": {
+      "import": "./TextField/TextField.tsx"
+    },
+    "./Tooltip": {
+      "import": "./Tooltip/Tooltip.tsx"
+    },
+    "./Typography": {
+      "import": "./Typography/Typography.tsx"
     }
   }
 }
