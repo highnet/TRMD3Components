@@ -1,6 +1,6 @@
 {
   "name": "trmd3components",
-  "version": "1.0.17",
+  "version": "1.0.31",
   "exports": {
     "./trmd3.css": {
       "import": "./trmd3.css"
@@ -30,7 +30,7 @@
       "import": "./Checkbox/Checkbox.tsx"
     },
     "./AssistChip": {
-      "import": "./Chips/AssistChips/AssistChip.tsx"
+      "import": "./Chips/AssistChip/AssistChip.tsx"
     },
     "./InputChip": {
       "import": "./Chips/InputChip/InputChip.tsx"
@@ -93,10 +93,13 @@
       "import": "./Navigation Drawer/NavigationDrawer.tsx"
     },
     "./NavigationRail": {
-      "import": "./NavigationRail/NavigationRail.tsx"
+      "import": "./Navigation Rail/NavigationRail.tsx"
     },
     "./RadioButton": {
       "import": "./Radio Button/RadioButton.tsx"
+    },
+    "./SegmentedButton": {
+      "import": "./Segmented Button/SegmentedButton.tsx"
     },
     "./SegmentedButtonGroup": {
       "import": "./Segmented Button/SegmentedButtonGroup.tsx"
@@ -122,5 +125,12 @@
     "./Typography": {
       "import": "./Typography/Typography.tsx"
     }
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.2"
   }
 }
