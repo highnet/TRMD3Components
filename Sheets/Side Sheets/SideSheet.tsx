@@ -1,24 +1,21 @@
-import React, { useState, useRef, useEffect } from "react";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
-import { IComponentProps } from "../../Component/IComponentProps";
+import React, {useState, useRef} from "react";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
 import Icon from "../../Icon/Icon";
 import Typography from "../../Typography/Typography";
-import { ISideSheetProps } from "./ISideSheetProps";
+import {ISideSheetProps} from "./ISideSheetProps";
 import Button from "../../Button/Button";
-import { toggleSideSheet } from "../../Gizmos/Modals";
+import {toggleSideSheet} from "../../Gizmos/Modals";
 import IconButton from "../../IconButton/IconButton";
 
 const SideSheet: React.FC<ISideSheetProps> = ({
 	className,
 	id,
-	children,
 	onMouseEnter,
 	onMouseLeave,
 	onMouseMove,
 	onMouseDown,
 	onMouseUp,
-	onClick,
 	title,
 	trailingIcon,
 	leadingIcon,
@@ -27,10 +24,14 @@ const SideSheet: React.FC<ISideSheetProps> = ({
 }) => {
 	const [_className] = useState(className || "");
 	const [_id] = useState(id || undefined);
-	const [isActive, setisActive] = useState(false);
+	const [_isActive, setisActive] = useState(false);
 	const [_title] = useState(title || "Title");
 	const [_buttons] = useState(buttons || undefined);
 	const [_showActions] = useState(!!_buttons);
+	const [_leadingIcon] = useState(leadingIcon || undefined);
+	const [_trailingIcon] = useState(trailingIcon || undefined);
+	const [_content] = useState(content || undefined);
+
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
@@ -42,24 +43,19 @@ const SideSheet: React.FC<ISideSheetProps> = ({
 		.add(_className)
 		.toString();
 
-		const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-			const { clientX } = event;
-			const sideSheetRect = sideSheetRef.current?.getBoundingClientRect();
-			const sideSheetLeft = sideSheetRect?.left || 0;
-			const sideSheetWidth = sideSheetRect?.width || 0;
-			const horizontalPercentage =
-			  ((clientX - sideSheetLeft) / sideSheetWidth) * 100;
-			if (horizontalPercentage < 7) {
-				toggleSideSheet(sideSheetRef, isActive, setisActive);
-			}
-		  };
+	const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+		const {clientX} = event;
+		const sideSheetRect = sideSheetRef.current?.getBoundingClientRect();
+		const sideSheetLeft = sideSheetRect?.left || 0;
+		const sideSheetWidth = sideSheetRect?.width || 0;
+		const horizontalPercentage =
+			((clientX - sideSheetLeft) / sideSheetWidth) * 100;
+		if (horizontalPercentage < 7) {
+			toggleSideSheet(sideSheetRef, _isActive, setisActive);
+		}
+	};
 
-		const handleToggleSideSheet = () => {
-			toggleSideSheet(sideSheetRef, isActive, setisActive);
-		};
-		
-
-	const actionButtons = _showActions && (
+	const _actionButtons = _showActions && (
 		<div className="dialog-actions">
 			{_buttons?.map((button, index) => (
 				<Button key={index} onClick={button.onClick} configuration={"filled"}>
@@ -79,27 +75,26 @@ const SideSheet: React.FC<ISideSheetProps> = ({
 			onMouseMove={onMouseMove}
 			onMouseDown={onMouseDown}
 			onMouseUp={onMouseUp}
-			onClick={handleClick}
-		>
-			{isActive && <Icon className="arrow-on-side-sheet">arrow_right</Icon>}
-			{!isActive && <Icon className="arrow-on-side-sheet">arrow_left</Icon>}
+			onClick={handleClick}>
+			{_isActive && <Icon className="arrow-on-side-sheet">arrow_right</Icon>}
+			{!_isActive && <Icon className="arrow-on-side-sheet">arrow_left</Icon>}
 			<div className="side-sheet-header">
-				{leadingIcon && (
-					<IconButton onClick={leadingIcon.onClick}>
-						{leadingIcon.name}
+				{_leadingIcon && (
+					<IconButton onClick={_leadingIcon.onClick}>
+						{_leadingIcon.name}
 					</IconButton>
 				)}
 				<Typography variant="text-title-large" className="title-on-side-sheet">
 					{_title}
 				</Typography>
-				{trailingIcon && (
-					<IconButton onClick={trailingIcon.onClick}>
-						{trailingIcon.name}
+				{_trailingIcon && (
+					<IconButton onClick={_trailingIcon.onClick}>
+						{_trailingIcon.name}
 					</IconButton>
 				)}
 			</div>
-			<div className="side-sheet-content">{content}</div>
-			<div className="side-sheet-actions">{actionButtons}</div>
+			<div className="side-sheet-content">{_content}</div>
+			<div className="side-sheet-actions">{_actionButtons}</div>
 		</div>
 	);
 };
