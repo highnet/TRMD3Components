@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
+import React, {useEffect, useState, useRef} from "react";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
 import Typography from "../../Typography/Typography";
 import Icon from "../../Icon/Icon";
 import IconButton from "../../IconButton/IconButton";
-import { IMenuItemProps } from "./IMenuItemProps";
+import {IMenuItemProps} from "./IMenuItemProps";
 
 const MenuItem: React.FC<IMenuItemProps> = ({
 	label,
@@ -79,7 +79,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({
 	const handleClick = () => {
 		setTimeout(() => {
 			/* @ts-ignore */
-			onClick?.(e);
+			onClick?.();
 		}, 100);
 	};
 
@@ -100,8 +100,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({
 			onMouseLeave={handleMouseLeave}
 			onMouseMove={onMouseMove}
 			onClick={handleClick}
-			ref={boxRef}
-		>
+			ref={boxRef}>
 			<div className="menu-item-state-layer">
 				{_leadingIcon && (
 					<div className="menu-item-leading-icon">

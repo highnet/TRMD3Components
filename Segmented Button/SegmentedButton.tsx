@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { getPreferredScheme } from "../Gizmos/Themeing";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { ISegmentedButtonProps } from "./ISegmentedButtonProps";
+import React, {useState, useEffect} from "react";
+import {getPreferredScheme} from "../Gizmos/Themeing";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {ISegmentedButtonProps} from "./ISegmentedButtonProps";
 import Icon from "../Icon/Icon";
 import Typography from "../Typography/Typography";
 
@@ -49,8 +49,7 @@ const SegmentedButton: React.FC<ISegmentedButtonProps> = ({
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
 			onMouseMove={onMouseMove}
-			onClick={onClick}
-		>
+			onClick={onClick}>
 			{_icon && <Icon>{_icon}</Icon>}
 			<Typography variant="text-label-large">{_children}</Typography>
 		</button>

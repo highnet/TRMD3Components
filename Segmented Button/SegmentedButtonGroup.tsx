@@ -1,6 +1,6 @@
-import React, { useState, Children, useEffect } from "react";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { ISegmentedButtonGroupProps } from "./ISegmentedButtonGroupProps";
+import React, {useState, Children, useEffect} from "react";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {ISegmentedButtonGroupProps} from "./ISegmentedButtonGroupProps";
 
 const SegmentedButtonGroup: React.FC<ISegmentedButtonGroupProps> = ({
 	className,
@@ -31,7 +31,7 @@ const SegmentedButtonGroup: React.FC<ISegmentedButtonGroupProps> = ({
 		.add(_className)
 		.toString();
 
-	const segmentedButtons = Children.map(children, (child, index) => {
+	const _segmentedButtons = Children.map(children, (child, index) => {
 		if (React.isValidElement(child)) {
 			let position = "";
 			if (index === 0) {
@@ -66,9 +66,8 @@ const SegmentedButtonGroup: React.FC<ISegmentedButtonGroupProps> = ({
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
 			onMouseMove={onMouseMove}
-			onClick={onClick}
-		>
-			{segmentedButtons}
+			onClick={onClick}>
+			{_segmentedButtons}
 		</div>
 	);
 };
