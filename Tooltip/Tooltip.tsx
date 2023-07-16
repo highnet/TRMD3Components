@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, {useRef, useState} from "react";
 import {getPreferredScheme} from "../Gizmos/Themeing";
 import {StringBuilder} from "../Gizmos/StringBuilder";
 import {ITooltipProps} from "./ITooltipProps";

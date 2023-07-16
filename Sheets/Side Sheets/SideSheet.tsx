@@ -19,7 +19,7 @@ const SideSheet: React.FC<ISideSheetProps> = ({
 	title,
 	trailingIcon,
 	leadingIcon,
-	content,
+	content: contents,
 	buttons,
 }) => {
 	const [_className] = useState(className || "");
@@ -30,7 +30,7 @@ const SideSheet: React.FC<ISideSheetProps> = ({
 	const [_showActions] = useState(!!_buttons);
 	const [_leadingIcon] = useState(leadingIcon || undefined);
 	const [_trailingIcon] = useState(trailingIcon || undefined);
-	const [_content] = useState(content || undefined);
+	const [_contents] = useState(contents || undefined);
 
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
@@ -93,7 +93,7 @@ const SideSheet: React.FC<ISideSheetProps> = ({
 					</IconButton>
 				)}
 			</div>
-			<div className="side-sheet-content">{_content}</div>
+			<div className="side-sheet-content">{_contents}</div>
 			<div className="side-sheet-actions">{_actionButtons}</div>
 		</div>
 	);

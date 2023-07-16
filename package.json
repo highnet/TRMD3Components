@@ -1,6 +1,6 @@
 {
   "name": "trmd3components",
-  "version": "1.1.10",
+  "version": "1.1.14",
   "exports": {
     "./trmd3.css": "./trmd3.css",
     "./BottomAppBar": "./App Bars/Bottom App Bar/BottomAppBar.tsx",

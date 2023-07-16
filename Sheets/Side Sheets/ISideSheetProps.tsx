@@ -14,5 +14,5 @@ export interface ISideSheetProps extends IComponentProps {
 		label?: string;
 		onClick?: () => void;
 	}[];
-	content?: string | undefined;
+	contents?: React.ReactNode;
 }
