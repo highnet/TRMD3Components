@@ -1,130 +1,48 @@
 {
   "name": "trmd3components",
-  "version": "1.1.3",
+  "version": "1.1.10",
   "exports": {
-    "./trmd3.css": {
-      "import": "./trmd3.css"
-    },
-    "./BottomAppBar": {
-      "import": "./App Bars/Bottom App Bar/BottomAppBar.tsx"
-    },
-    "./TopAppBar": {
-      "import": "./App Bars/Top App Bar/TopAppBar.tsx"
-    },
-    "./Badge": {
-      "import": "./Badge/Badge.tsx"
-    },
-    "./Button": {
-      "import": "./Button/Button.tsx"
-    },
-    "./HorizontalCard": {
-      "import": "./Cards/HorizontalCard/HorizontalCard.tsx"
-    },
-    "./StackedCard": {
-      "import": "./Cards/StackedCard/StackedCard.tsx"
-    },
-    "./Carousel": {
-      "import": "./Carousel/Carousel.tsx"
-    },
-    "./Checkbox": {
-      "import": "./Checkbox/Checkbox.tsx"
-    },
-    "./AssistChip": {
-      "import": "./Chips/AssistChip/AssistChip.tsx"
-    },
-    "./InputChip": {
-      "import": "./Chips/InputChip/InputChip.tsx"
-    },
-    "./Component": {
-      "import": "./Component/Component.tsx"
-    },
-    "./Dialog": {
-      "import": "./Dialogs/Dialog.tsx"
-    },
-    "./HorizontalDivider": {
-      "import": "./Dividers/HorizontalDivider/HorizontalDivider.tsx"
-    },
-    "./VerticalDivider": {
-      "import": "./Dividers/VerticalDivider/VerticalDivider.tsx"
-    },
-    "./ExtendedFab": {
-      "import": "./FABs/Extended FAB/ExtendedFab.tsx"
-    },
-    "./Fab": {
-      "import": "./FABs/FAB/Fab.tsx"
-    },
-    "./Modals": {
-      "import": "./Gizmos/Modals.tsx"
-    },
-    "./Redirection": {
-      "import": "./Gizmos/Redirection.tsx"
-    },
-    "./Scrolling": {
-      "import": "./Gizmos/Scrolling.tsx"
-    },
-    "./StringBuilder": {
-      "import": "./Gizmos/StringBuilder.tsx"
-    },
-    "./Themeing": {
-      "import": "./Gizmos/Themeing.tsx"
-    },
-    "./Icon": {
-      "import": "./Icon/Icon.tsx"
-    },
-    "./IconButton": {
-      "import": "./IconButton/IconButton.tsx"
-    },
-    "./ListItem": {
-      "import": "./Lists/List Items/ListItem.tsx"
-    },
-    "./List": {
-      "import": "./Lists/List.tsx"
-    },
-    "./MenuItem": {
-      "import": "./Menus/MenuItem/MenuItem.tsx"
-    },
-    "./Menu": {
-      "import": "./Menus/Menu.tsx"
-    },
-    "./NavigationDrawerItem": {
-      "import": "./Navigation Drawer/Navigation Drawer Item/NavigationDrawerItem.tsx"
-    },
-    "./NavigationDrawer": {
-      "import": "./Navigation Drawer/NavigationDrawer.tsx"
-    },
-    "./NavigationRail": {
-      "import": "./Navigation Rail/NavigationRail.tsx"
-    },
-    "./RadioButton": {
-      "import": "./Radio Button/RadioButton.tsx"
-    },
-    "./SegmentedButton": {
-      "import": "./Segmented Button/SegmentedButton.tsx"
-    },
-    "./SegmentedButtonGroup": {
-      "import": "./Segmented Button/SegmentedButtonGroup.tsx"
-    },
-    "./SideSheet": {
-      "import": "./Sheets/Side Sheets/SideSheet.tsx"
-    },
-    "./Slider": {
-      "import": "./Sliders/Slider.tsx"
-    },
-    "./SnackBars": {
-      "import": "./SnackBars/SnackBar.tsx"
-    },
-    "./Switch": {
-      "import": "./Switch/Switch.tsx"
-    },
-    "./TextField": {
-      "import": "./TextField/TextField.tsx"
-    },
-    "./Tooltip": {
-      "import": "./Tooltip/Tooltip.tsx"
-    },
-    "./Typography": {
-      "import": "./Typography/Typography.tsx"
-    }
+    "./trmd3.css": "./trmd3.css",
+    "./BottomAppBar": "./App Bars/Bottom App Bar/BottomAppBar.tsx",
+    "./TopAppBar": "./App Bars/Top App Bar/TopAppBar.tsx",
+    "./Badge": "./Badge/Badge.tsx",
+    "./Button": "./Button/Button.tsx",
+    "./HorizontalCard": "./Cards/HorizontalCard/HorizontalCard.tsx",
+    "./StackedCard": "./Cards/StackedCard/StackedCard.tsx",
+    "./Carousel": "./Carousel/Carousel.tsx",
+    "./Checkbox": "./Checkbox/Checkbox.tsx",
+    "./AssistChip": "./Chips/AssistChip/AssistChip.tsx",
+    "./InputChip": "./Chips/InputChip/InputChip.tsx",
+    "./Component": "./Component/Component.tsx",
+    "./Dialog": "./Dialogs/Dialog.tsx",
+    "./HorizontalDivider": "./Dividers/HorizontalDivider/HorizontalDivider.tsx",
+    "./VerticalDivider": "./Dividers/VerticalDivider/VerticalDivider.tsx",
+    "./ExtendedFab": "./FABs/Extended FAB/ExtendedFab.tsx",
+    "./Fab": "./FABs/FAB/Fab.tsx",
+    "./Modals": "./Gizmos/Modals.tsx",
+    "./Redirection": "./Gizmos/Redirection.tsx",
+    "./Scrolling": "./Gizmos/Scrolling.tsx",
+    "./StringBuilder": "./Gizmos/StringBuilder.tsx",
+    "./Themeing": "./Gizmos/Themeing.tsx",
+    "./Icon": "./Icon/Icon.tsx",
+    "./IconButton": "./IconButton/IconButton.tsx",
+    "./ListItem": "./Lists/List Items/ListItem.tsx",
+    "./List": "./Lists/List.tsx",
+    "./MenuItem": "./Menus/MenuItem/MenuItem.tsx",
+    "./Menu": "./Menus/Menu.tsx",
+    "./NavigationDrawerItem": "./Navigation Drawer/Navigation Drawer Item/NavigationDrawerItem.tsx",
+    "./NavigationDrawer": "./Navigation Drawer/NavigationDrawer.tsx",
+    "./NavigationRail": "./Navigation Rail/NavigationRail.tsx",
+    "./RadioButton": "./Radio Button/RadioButton.tsx",
+    "./SegmentedButton": "./Segmented Button/SegmentedButton.tsx",
+    "./SegmentedButtonGroup": "./Segmented Button/SegmentedButtonGroup.tsx",
+    "./SideSheet": "./Sheets/Side Sheets/SideSheet.tsx",
+    "./Slider": "./Sliders/Slider.tsx",
+    "./SnackBars": "./SnackBars/SnackBar.tsx",
+    "./Switch": "./Switch/Switch.tsx",
+    "./TextField": "./TextField/TextField.tsx",
+    "./Tooltip": "./Tooltip/Tooltip.tsx",
+    "./Typography": "./Typography/Typography.tsx"
   },
   "dependencies": {
     "react": "^18.2.0",
