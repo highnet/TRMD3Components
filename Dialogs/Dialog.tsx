@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
-import { getPreferredScheme } from "../Gizmos/Themeing";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { IDIalogProps } from "./IDialogProps";
+import React, {useState, useRef, useEffect} from "react";
+import {getPreferredScheme} from "../Gizmos/Themeing";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {IDIalogProps} from "./IDialogProps";
 import Button from "../Button/Button";
-import { closeDialogRef } from "../Gizmos/Modals";
+import {closeDialogRef} from "../Gizmos/Modals";
 import Typography from "../Typography/Typography";
 import HorizontalDivider from "../Dividers/HorizontalDivider/HorizontalDivider";
 
@@ -50,16 +50,12 @@ const Dialog: React.FC<IDIalogProps> = ({
 				<Button
 					key={index}
 					onClick={button.onClick}
-					configuration={button.configuration || "text"}
-				>
+					configuration={button.configuration || "text"}>
 					{button.label || "Action " + index}
 				</Button>
 			))}
 			{_showCloseButton && (
-				<Button
-					onClick={(event) => closeDialogRef(dialogRef)}
-					configuration="text"
-				>
+				<Button onClick={() => closeDialogRef(dialogRef)} configuration="text">
 					Close
 				</Button>
 			)}
@@ -94,8 +90,7 @@ const Dialog: React.FC<IDIalogProps> = ({
 				onMouseLeave={onMouseLeave}
 				onMouseMove={onMouseMove}
 				onClick={onClick}
-				ref={dialogRef}
-			>
+				ref={dialogRef}>
 				<div className="dialog-text-content">
 					{_iconName && <Icon className="icon-on-dialog">{_iconName}</Icon>}
 					<Typography variant="text-headline-small" className="title-on-dialog">
@@ -103,8 +98,7 @@ const Dialog: React.FC<IDIalogProps> = ({
 					</Typography>
 					<Typography
 						variant="text-body-medium"
-						className="supporting-text-on-dialog"
-					>
+						className="supporting-text-on-dialog">
 						{_children}
 					</Typography>
 				</div>

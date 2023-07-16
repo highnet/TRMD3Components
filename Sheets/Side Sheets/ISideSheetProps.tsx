@@ -1,4 +1,4 @@
-import { IComponentProps } from "../../Component/IComponentProps";
+import {IComponentProps} from "../../Component/IComponentProps";
 
 export interface ISideSheetProps extends IComponentProps {
 	title?: string;
@@ -14,5 +14,5 @@ export interface ISideSheetProps extends IComponentProps {
 		label?: string;
 		onClick?: () => void;
 	}[];
-	content?: React.ReactNode;
+	content?: string | undefined;
 }

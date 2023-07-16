@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
-import { ITopAppBarProps } from "./ITopAppBarProps";
+import React, {useEffect, useState} from "react";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
+import {ITopAppBarProps} from "./ITopAppBarProps";
 import Typography from "../../Typography/Typography";
-import Icon from "../../Icon/Icon";
 import IconButton from "../../IconButton/IconButton";
 
 const TopAppBar: React.FC<ITopAppBarProps> = ({
@@ -48,18 +47,15 @@ const TopAppBar: React.FC<ITopAppBarProps> = ({
 			},
 		]
 	);
-	const [isScrolling, setIsScrolling] = useState(false);
 
 	useEffect(() => {
 		function handleScroll() {
-			setIsScrolling(true);
 			const navigationRails = document.querySelectorAll(".top-app-bar");
 			navigationRails.forEach((navigationRail) => {
 				navigationRail.classList.add("top-app-bar-on-scroll");
 			});
 			clearTimeout(timeoutId);
 			timeoutId = setTimeout(() => {
-				setIsScrolling(false);
 				navigationRails.forEach((navigationRail) => {
 					navigationRail.classList.remove("top-app-bar-on-scroll");
 				});
@@ -91,27 +87,24 @@ const TopAppBar: React.FC<ITopAppBarProps> = ({
 		<IconButton
 			className="right-icon-on-top-app-bar"
 			key={index}
-			onClick={icon.onClick}
-		>
+			onClick={icon.onClick}>
 			{icon.name}
 		</IconButton>
 	));
 
 	return (
 		<div id={_id} className={_computedComponentClassName}>
-			<div style={{ display: "flex", width: "100%" }}>
+			<div style={{display: "flex", width: "100%"}}>
 				<div className="left-container-on-top-app-bar">
 					<IconButton
 						className="left-icon-on-top-app-bar"
-						onClick={leadingIcon.onClick}
-					>
+						onClick={leadingIcon.onClick}>
 						{leadingIcon.name}
 					</IconButton>
 
 					<Typography
 						variant="text-title-large"
-						className="title-on-top-app-bar"
-					>
+						className="title-on-top-app-bar">
 						{((_configuration === "small" ||
 							_configuration == "small-centered") &&
 							_title) ||

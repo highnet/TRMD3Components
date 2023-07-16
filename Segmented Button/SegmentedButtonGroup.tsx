@@ -16,9 +16,7 @@ const SegmentedButtonGroup: React.FC<ISegmentedButtonGroupProps> = ({
 	const [selectedButtonIndex, setSelectedButtonIndex] = useState(
 		defaultSelectedButtonIndex
 	);
-	const [selectedButtonValue, setSelectedButtonValue] = useState<
-		string | undefined
-	>(undefined);
+
 	const [_className] = useState(className || "");
 	const [_id] = useState(id || undefined);
 
@@ -54,7 +52,6 @@ const SegmentedButtonGroup: React.FC<ISegmentedButtonGroupProps> = ({
 	useEffect(() => {
 		if (selectedButtonIndex !== -1) {
 			let newValue = children[selectedButtonIndex].props.value;
-			setSelectedButtonValue(newValue);
 			onSelectedValueChange && onSelectedValueChange(newValue);
 		}
 	}, [selectedButtonIndex, children, onSelectedValueChange]);

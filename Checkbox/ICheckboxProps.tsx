@@ -10,8 +10,7 @@
   selected: a boolean that represents whether or not the checkbox is selected 
 */
 
-import { MouseEvent } from "react";
-import { IComponentProps } from "../Component/IComponentProps";
+import {IComponentProps} from "../Component/IComponentProps";
 
 export interface ICheckboxProps extends IComponentProps {
 	configuration?: string;

@@ -1,7 +1,6 @@
-import React, { useState, useRef } from "react";
-import { getPreferredScheme } from "../Gizmos/Themeing";
-import { ICarouselProps } from "./ICarouselProps";
-import { StringBuilder } from "../Gizmos/StringBuilder";
+import React, {useState, useRef} from "react";
+import {ICarouselProps} from "./ICarouselProps";
+import {StringBuilder} from "../Gizmos/StringBuilder";
 import Typography from "../Typography/Typography";
 
 const Carousel: React.FC<ICarouselProps> = ({
@@ -91,16 +90,14 @@ const Carousel: React.FC<ICarouselProps> = ({
 			className="carousel-container"
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
-			onMouseMove={onMouseMove}
-		>
+			onMouseMove={onMouseMove}>
 			<div
 				id={_id}
 				className={computedComponentClassName}
 				ref={ref}
-				style={{ width: `${width}rem`, position: "relative" }}
+				style={{width: `${width}rem`, position: "relative"}}
 				onClick={handleClick}
-				onTouchEnd={handleTouch}
-			>
+				onTouchEnd={handleTouch}>
 				{images.map((image, index) => {
 					const distance = Math.abs(currentIndex - index);
 					const isExtraSmall = distance >= 2;
@@ -133,15 +130,13 @@ const Carousel: React.FC<ICarouselProps> = ({
 											image.label && image.supportingText
 												? "element-on-carousel-item upper-label-on-carousel-item"
 												: "element-on-carousel-item lower-label-on-carousel-item"
-										}
-									>
+										}>
 										{image.label}
 									</Typography>
 									{image.supportingText && (
 										<Typography
 											variant="text-label-small"
-											className="element-on-carousel-item lower-label-on-carousel-item"
-										>
+											className="element-on-carousel-item lower-label-on-carousel-item">
 											{image.supportingText}
 										</Typography>
 									)}

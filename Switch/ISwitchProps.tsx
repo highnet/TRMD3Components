@@ -18,8 +18,7 @@
   Together, these properties define the behavior and appearance of a switch component, and
   can be used to customize its functionality in an application.
 */
-import { IComponentProps } from "../Component/IComponentProps";
-import { MouseEvent } from "react";
+import {IComponentProps} from "../Component/IComponentProps";
 
 export interface ISwitchProps extends IComponentProps {
 	selected?: boolean;

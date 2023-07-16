@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect } from "react";
-import { getPreferredScheme } from "../Gizmos/Themeing";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { ITooltipProps } from "./ITooltipProps";
+import React, {useRef, useState, useEffect} from "react";
+import {getPreferredScheme} from "../Gizmos/Themeing";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {ITooltipProps} from "./ITooltipProps";
 import Typography from "../Typography/Typography";
 import Button from "../Button/Button";
 
@@ -101,8 +101,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
 							_configuration === "plain-singleline"
 								? "text-body-small"
 								: "text-body-medium"
-						}
-					>
+						}>
 						{_children}
 					</Typography>
 				</div>

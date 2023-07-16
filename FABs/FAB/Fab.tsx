@@ -22,7 +22,6 @@ const Fab: React.FC<IFabProps> = ({
 	const [_config] = useState(configuration || "surface");
 	const [_iconName] = useState(iconName || "edit");
 	const [_size] = useState(size || "small");
-	console.log("test");
 	const boxRef = useRef<HTMLButtonElement>(null);
 	const innerCircleRef = useRef<HTMLSpanElement>(null);
 

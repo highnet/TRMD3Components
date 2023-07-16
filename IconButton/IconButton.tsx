@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { getPreferredScheme } from "../Gizmos/Themeing";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { IIconButtonProps } from "./IIconButtonProps";
+import React, {useState} from "react";
+import {getPreferredScheme} from "../Gizmos/Themeing";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {IIconButtonProps} from "./IIconButtonProps";
 import Icon from "../Icon/Icon";
 
 const IconButton: React.FC<IIconButtonProps> = ({
@@ -57,8 +57,7 @@ const IconButton: React.FC<IIconButtonProps> = ({
 			onClick={(e) => {
 				onClick?.(e);
 				handleClick();
-			}}
-		>
+			}}>
 			{!_selected && <Icon>{children}</Icon>}
 			{_selected && <Icon filled={true}>{children}</Icon>}
 		</div>

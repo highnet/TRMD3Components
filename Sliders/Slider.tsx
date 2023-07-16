@@ -1,7 +1,7 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { getPreferredScheme } from "../Gizmos/Themeing";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { ISliderProps } from "./ISliderProps";
+import React, {useEffect, useRef, useState} from "react";
+import {getPreferredScheme} from "../Gizmos/Themeing";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {ISliderProps} from "./ISliderProps";
 import Typography from "../Typography/Typography";
 
 const Slider: React.FC<ISliderProps> = ({
@@ -87,13 +87,13 @@ const Slider: React.FC<ISliderProps> = ({
 		};
 	}, []);
 
-	const handleMouseEnter = (event: MouseEvent) => {
+	const handleMouseEnter = () => {
 		thumbRef.current?.classList.add("slider-thumb-active");
 		thumbOverlayRef.current?.classList.add("slider-thumb-overlay-active");
 		thumbTooltipRef.current?.classList.add("slider-thumb-tooltip-active");
 	};
 
-	const handleMouseLeave = (event: MouseEvent) => {
+	const handleMouseLeave = () => {
 		thumbRef.current?.classList.remove("slider-thumb-active");
 		thumbOverlayRef.current?.classList.remove("slider-thumb-overlay-active");
 		thumbTooltipRef.current?.classList.remove("slider-thumb-tooltip-active");
@@ -106,29 +106,27 @@ const Slider: React.FC<ISliderProps> = ({
 			onMouseMove={onMouseMove}
 			onClick={onClick}
 			className="slider-container"
-			ref={sliderContainerRef}
-		>
+			ref={sliderContainerRef}>
 			<div
 				className={"slider-thumb slider-thumb-" + _theme + " slider-thumb-"}
 				ref={thumbRef}
 				style={{
 					transform: `translateX(${thumbPosition})`,
-				}}
-			>
+				}}>
 				<div ref={thumbTooltipRef} className="slider-thumb-tooltip">
 					<div className={"slider-teardrop slider-teardrop-" + _theme}></div>
 					<Typography
 						variant="text-label-medium"
-						className={"slider-value slider-value-" + _theme}
-					>
+						className={"slider-value slider-value-" + _theme}>
 						{_value}
 					</Typography>
 				</div>
 
 				<div
 					ref={thumbOverlayRef}
-					className={"slider-thumb-overlay slider-thumb-overlay-" + _theme}
-				></div>
+					className={
+						"slider-thumb-overlay slider-thumb-overlay-" + _theme
+					}></div>
 			</div>
 			<input
 				className={_computedComponentClassName}
@@ -139,8 +137,7 @@ const Slider: React.FC<ISliderProps> = ({
 				value={_value}
 				step={step || "0.1"}
 				onChange={handleValueChange}
-				style={{ background: gradient }}
-			></input>
+				style={{background: gradient}}></input>
 		</div>
 	);
 };

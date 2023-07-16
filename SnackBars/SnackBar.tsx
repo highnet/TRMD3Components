@@ -4,7 +4,6 @@ import {StringBuilder} from "../Gizmos/StringBuilder";
 import {ISnackBarProps} from "./ISnackBarProps";
 import Typography from "../Typography/Typography";
 import Button from "../Button/Button";
-import Icon from "../Icon/Icon";
 import IconButton from "../IconButton/IconButton";
 
 const SnackBar: React.FC<ISnackBarProps> = ({

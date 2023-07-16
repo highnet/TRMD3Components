@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { IStackedCardsProps } from "./IStackedCardsProps";
-import Icon from "../../Icon/Icon";
+import React from "react";
+import {useState} from "react";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {IStackedCardsProps} from "./IStackedCardsProps";
 import Typography from "../../Typography/Typography";
 import Button from "../../Button/Button";
 import IconButton from "../../IconButton/IconButton";
@@ -80,8 +80,7 @@ const StackedCard: React.FC<IStackedCardsProps> = ({
 			className={_computedComponentClassName}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
-			onMouseMove={onMouseMove}
-		>
+			onMouseMove={onMouseMove}>
 			<div className="stacked-card-header">
 				<div className="stacked-card-header-content">
 					<div className="stacked-card-header-content-monogram ">
@@ -89,8 +88,7 @@ const StackedCard: React.FC<IStackedCardsProps> = ({
 							className={
 								"stacked-card-header-content-monogram-initial stacked-card-header-content-monogram-initial-" +
 								_theme
-							}
-						>
+							}>
 							<Typography variant="text-title-medium">{_initial}</Typography>
 						</div>
 					</div>
@@ -98,14 +96,12 @@ const StackedCard: React.FC<IStackedCardsProps> = ({
 					<div className="stacked-card-header-content-text">
 						<Typography
 							className="stacked-card-header-content-text-header"
-							variant="text-title-medium"
-						>
+							variant="text-title-medium">
 							{_header}
 						</Typography>
 						<Typography
 							className="stacked-card-header-content-text-subheader"
-							variant="text-body-medium"
-						>
+							variant="text-body-medium">
 							{_subheader}
 						</Typography>
 					</div>
@@ -121,14 +117,12 @@ const StackedCard: React.FC<IStackedCardsProps> = ({
 				<div className="stacked-card-text-content-headline">
 					<Typography
 						variant="text-body-large"
-						className="stacked-card-text-content-headline-title"
-					>
+						className="stacked-card-text-content-headline-title">
 						{_title}
 					</Typography>
 					<Typography
 						variant="text-body-medium"
-						className="stacked-card-text-content-headline-subhead"
-					>
+						className="stacked-card-text-content-headline-subhead">
 						{_subhead}
 					</Typography>
 				</div>
@@ -138,8 +132,7 @@ const StackedCard: React.FC<IStackedCardsProps> = ({
 							"stacked-card-text-content-supporting-text-text stacked-card-text-content-supporting-text-text-" +
 							_theme
 						}
-						variant="text-body-medium"
-					>
+						variant="text-body-medium">
 						{_text}
 					</Typography>
 				</div>
