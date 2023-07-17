@@ -19,15 +19,14 @@
 	switch, including its track, handle, and optional icon.
 */
 
-import React, { useState } from "react";
-import { ISwitchProps } from "./ISwitchProps";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { getPreferredScheme } from "../Gizmos/Themeing";
+import React, {useState} from "react";
+import {ISwitchProps} from "./ISwitchProps";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {getPreferredScheme} from "../Gizmos/Themeing";
 import Icon from "../Icon/Icon";
 
 const Switch: React.FC<ISwitchProps> = ({
 	disabled,
-	children,
 	id,
 	className,
 	selected,
@@ -103,8 +102,7 @@ const Switch: React.FC<ISwitchProps> = ({
 			className={_computedComponentClassName}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
-			onMouseMove={onMouseMove}
-		>
+			onMouseMove={onMouseMove}>
 			<div className={_computedComponentTrackClassName}>
 				<div className={_computedComponentHandleClassName}>
 					<div className={_computedComponentHandleOverlayClassName}>
@@ -125,7 +123,6 @@ const Switch: React.FC<ISwitchProps> = ({
 					</div>
 				</div>
 			</div>
-			{children}
 		</div>
 	);
 };

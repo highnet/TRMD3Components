@@ -1,11 +1,12 @@
-import { useState, useEffect, useRef } from "react";
-import { INavigationRailProps } from "./INavigationRailProps";
-import { getPreferredScheme } from "../Gizmos/Themeing";
-import { StringBuilder } from "../Gizmos/StringBuilder";
+import {useState, useEffect, useRef} from "react";
+import {INavigationRailProps} from "./INavigationRailProps";
+import {getPreferredScheme} from "../Gizmos/Themeing";
+import {StringBuilder} from "../Gizmos/StringBuilder";
 import Fab from "../FABs/FAB/Fab";
 import Icon from "../Icon/Icon";
 import Typography from "../Typography/Typography";
 import Badge from "../Badge/Badge";
+import React from "react";
 
 const NavigationRail: React.FC<INavigationRailProps> = ({
 	className,
@@ -29,20 +30,20 @@ const NavigationRail: React.FC<INavigationRailProps> = ({
 
 	interface BadgeOffsets {
 		[key: string]: {
-			[key: string]: { xOffset: number; yOffset: number };
+			[key: string]: {xOffset: number; yOffset: number};
 		};
 	}
 
 	const badgeOffsets: BadgeOffsets = {
 		big: {
-			small: { xOffset: 1, yOffset: -4 },
-			singledigit: { xOffset: 1, yOffset: -4 },
-			multipledigits: { xOffset: 1.5, yOffset: -4 },
+			small: {xOffset: 1, yOffset: -4},
+			singledigit: {xOffset: 1, yOffset: -4},
+			multipledigits: {xOffset: 1.5, yOffset: -4},
 		},
 		small: {
-			small: { xOffset: 1, yOffset: -4.5 },
-			singledigit: { xOffset: 1, yOffset: -4.5 },
-			multipledigits: { xOffset: 1.5, yOffset: -4.5 },
+			small: {xOffset: 1, yOffset: -4.5},
+			singledigit: {xOffset: 1, yOffset: -4.5},
+			multipledigits: {xOffset: 1.5, yOffset: -4.5},
 		},
 	};
 
@@ -51,7 +52,7 @@ const NavigationRail: React.FC<INavigationRailProps> = ({
 		if (iconSize === "big" && icon.label) {
 			iconSize = "small";
 		}
-		const badgeConfigurationMap: { [key: string]: string } = {
+		const badgeConfigurationMap: {[key: string]: string} = {
 			small: "small",
 			"single-digit": "singledigit",
 			"multiple-digits": "multipledigits",
@@ -60,7 +61,7 @@ const NavigationRail: React.FC<INavigationRailProps> = ({
 		const badgeConfiguration =
 			badgeConfigurationMap[icon.badge?.configuration ?? "small"];
 
-		const { xOffset: badgeXOffset, yOffset: badgeYOffset } =
+		const {xOffset: badgeXOffset, yOffset: badgeYOffset} =
 			badgeOffsets[iconSize][badgeConfiguration];
 
 		return (
@@ -81,23 +82,20 @@ const NavigationRail: React.FC<INavigationRailProps> = ({
 					if (icon && icon.onClick) {
 						icon.onClick();
 					}
-				}}
-			>
+				}}>
 				<Icon
 					className={`icon-on-navigation-rail icon-on-navigation-rail-${_theme} ${
 						iconSize === "big"
 							? "big-icon-on-navigation-rail"
 							: "small-icon-on-navigation-rail"
-					}`}
-				>
+					}`}>
 					{icon.name}
 				</Icon>
 
 				{icon.label && (
 					<Typography
 						variant="text-label-medium"
-						className={`label-on-navigation-rail label-on-navigation-rail-${_theme}`}
-					>
+						className={`label-on-navigation-rail label-on-navigation-rail-${_theme}`}>
 						{icon.label}
 					</Typography>
 				)}
@@ -105,8 +103,7 @@ const NavigationRail: React.FC<INavigationRailProps> = ({
 					<Badge
 						configuration={icon.badge.configuration}
 						xOffset={badgeXOffset}
-						yOffset={badgeYOffset}
-					>
+						yOffset={badgeYOffset}>
 						{icon.badge.value}
 					</Badge>
 				)}
@@ -138,20 +135,17 @@ const NavigationRail: React.FC<INavigationRailProps> = ({
 		<div
 			ref={navigationRailRef}
 			id={_id}
-			className={_computedComponentClassName}
-		>
+			className={_computedComponentClassName}>
 			<div className="navigation-rail-top">
 				{fab && fab.onClick ? (
 					<Fab
 						configuration="tertiary"
 						size="medium"
 						iconName={_fabIconName}
-						onClick={_fab.onClick}
-					>
+						onClick={_fab.onClick}>
 						<Typography
 							variant="text-label-medium"
-							className={`label-on-navigation-rail label-on-navigation-rail-${_theme}`}
-						>
+							className={`label-on-navigation-rail label-on-navigation-rail-${_theme}`}>
 							{fab.label}
 						</Typography>
 					</Fab>

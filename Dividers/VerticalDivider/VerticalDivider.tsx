@@ -17,10 +17,10 @@
   The component is exported as default so it can be imported and used in other files.
 */
 
-import React, { useState } from "react";
-import { IVerticalDividerProps } from "./IVerticalDividerProps";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
+import React, {useState} from "react";
+import {IVerticalDividerProps} from "./IVerticalDividerProps";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
 
 const VerticalDivider: React.FC<IVerticalDividerProps> = ({
 	id,
@@ -41,12 +41,12 @@ const VerticalDivider: React.FC<IVerticalDividerProps> = ({
 	const [_insetBottomHeight] = useState(insetBottomHeight || 16);
 	const [_showInsets] = useState(showInsets || false);
 
-	const REM_BASE = 10; // 1 rem = 10px
+	const _REM_BASE = 10; // 1 rem = 10px
 
-	let _finalWidth: string = `${_width / REM_BASE}rem`;
-	let _finalHeight: string = `${_height / REM_BASE}rem`;
-	let _finalInsetTopHeight = `${_insetTopHeight / REM_BASE}rem`;
-	let _finalInsetBottomHeight = `${_insetBottomHeight / REM_BASE}rem`;
+	let _finalWidth: string = `${_width / _REM_BASE}rem`;
+	let _finalHeight: string = `${_height / _REM_BASE}rem`;
+	let _finalInsetTopHeight = `${_insetTopHeight / _REM_BASE}rem`;
+	let _finalInsetBottomHeight = `${_insetBottomHeight / _REM_BASE}rem`;
 	let _finalInsetColor: string = _showInsets ? "red" : "transparent";
 
 	const _theme =
@@ -76,17 +76,14 @@ const VerticalDivider: React.FC<IVerticalDividerProps> = ({
 
 	return (
 		<div id={_id} className={_computedComponentClassName}>
-			{_inset == "top" || _inset == "center" ? (
+			{(_inset == "top" || _inset == "center") && (
 				<div
 					className={_computedComponentInsetTopClassName}
 					style={{
 						width: _finalWidth,
 						height: _finalInsetTopHeight,
 						color: _finalInsetColor,
-					}}
-				></div>
-			) : (
-				""
+					}}></div>
 			)}
 
 			<div
@@ -94,21 +91,18 @@ const VerticalDivider: React.FC<IVerticalDividerProps> = ({
 				style={{
 					width: _finalWidth,
 					height: _finalHeight,
-				}}
-			></div>
+				}}></div>
 
-			{_inset == "bottom" || _inset == "center" ? (
-				<div
-					className={_computedComponentInsetBottomClassName}
-					style={{
-						width: _finalWidth,
-						height: _finalInsetBottomHeight,
-						color: _finalInsetColor,
-					}}
-				></div>
-			) : (
-				""
-			)}
+			{_inset == "bottom" ||
+				(_inset == "center" && (
+					<div
+						className={_computedComponentInsetBottomClassName}
+						style={{
+							width: _finalWidth,
+							height: _finalInsetBottomHeight,
+							color: _finalInsetColor,
+						}}></div>
+				))}
 		</div>
 	);
 };

@@ -22,12 +22,13 @@ const Slider: React.FC<ISliderProps> = ({
 	const [_min] = useState(min || 0);
 	const [_max] = useState(max || 100);
 	const [_value, setValue] = useState(value || 50);
+	const [_thumbPosition, setThumbPosition] = useState("0rem");
+	const [_step] = useState(step || 1);
 
 	const sliderContainerRef = useRef<HTMLDivElement>(null);
 	const thumbRef = useRef<HTMLDivElement>(null);
 	const thumbOverlayRef = useRef<HTMLDivElement>(null);
 	const thumbTooltipRef = useRef<HTMLDivElement>(null);
-	const [thumbPosition, setThumbPosition] = useState("0rem");
 
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
@@ -43,28 +44,28 @@ const Slider: React.FC<ISliderProps> = ({
 		setValue(parseInt(event.target.value));
 	};
 
-	const isDarkTheme = _theme.includes("dark");
-	const primaryColor = isDarkTheme
+	const _isDarkTheme = _theme.includes("dark");
+	const _primaryColor = _isDarkTheme
 		? "var(--m3-sys-dark-primary)"
 		: "var(--m3-sys-light-primary)";
-	const surfaceColor = isDarkTheme
+	const _surfaceColor = _isDarkTheme
 		? "var(--m3-sys-dark-surface-container-highest)"
 		: "var(--m3-sys-light-surface-container-highest)";
 
-	const gradient = `linear-gradient(to right, ${primaryColor} ${
+	const _gradient = `linear-gradient(to right, ${_primaryColor} ${
 		((_value - _min) / (_max - _min)) * 100
-	}%, ${surfaceColor} 0%)`;
+	}%, ${_surfaceColor} 0%)`;
 
 	useEffect(() => {
-		const newThumbPosition = `${((_value - _min) / (_max - _min)) * 16}rem`;
-		setThumbPosition(newThumbPosition);
+		const _newThumbPosition = `${((_value - _min) / (_max - _min)) * 16}rem`;
+		setThumbPosition(_newThumbPosition);
 	}, [_value, _min, _max]);
 
 	useEffect(() => {
 		if (thumbRef.current) {
-			thumbRef.current.style.transform = `translateX(${thumbPosition})`;
+			thumbRef.current.style.transform = `translateX(${_thumbPosition})`;
 		}
-	}, [thumbPosition]);
+	}, [_thumbPosition]);
 
 	useEffect(() => {
 		sliderContainerRef.current?.addEventListener(
@@ -111,7 +112,7 @@ const Slider: React.FC<ISliderProps> = ({
 				className={"slider-thumb slider-thumb-" + _theme + " slider-thumb-"}
 				ref={thumbRef}
 				style={{
-					transform: `translateX(${thumbPosition})`,
+					transform: `translateX(${_thumbPosition})`,
 				}}>
 				<div ref={thumbTooltipRef} className="slider-thumb-tooltip">
 					<div className={"slider-teardrop slider-teardrop-" + _theme}></div>
@@ -135,9 +136,9 @@ const Slider: React.FC<ISliderProps> = ({
 				min={_min}
 				max={_max}
 				value={_value}
-				step={step || "0.1"}
+				step={_step}
 				onChange={handleValueChange}
-				style={{background: gradient}}></input>
+				style={{background: _gradient}}></input>
 		</div>
 	);
 };

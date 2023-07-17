@@ -37,8 +37,9 @@ const TextField: React.FC<ITextFieldProps> = ({
 	const [_placeholder] = useState(placeholder);
 	const [_input] = useState(input);
 	const [_defaultValueResetted, setDefaultValueReseted] = useState(false);
-	const [isFocused, setIsFocused] = useState(false);
-	const [isValidInput, setIsValidInput] = useState(true);
+	const [_isFocused, setIsFocused] = useState(false);
+	const [_isValidInput, setIsValidInput] = useState(true);
+	const [_children] = useState(children || undefined);
 
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
@@ -99,14 +100,13 @@ const TextField: React.FC<ITextFieldProps> = ({
 						<Typography
 							variant="text-body-small"
 							className={"label-on-text-field label-on-text-field-outlined"}>
-							{_textConfiguration === "label-input" ||
-							_textConfiguration === "label-placeholder"
-								? _label
-								: ""}
+							{(_textConfiguration === "label-input" ||
+								_textConfiguration === "label-placeholder") &&
+								_label}
 						</Typography>
 					)}
 				<div className="text-field-container">
-					{leadingIconName && (
+					{_leadingIconName && (
 						<div>
 							<Icon className="icon-on-text-field">{_leadingIconName}</Icon>
 						</div>
@@ -118,10 +118,9 @@ const TextField: React.FC<ITextFieldProps> = ({
 								<Typography
 									variant="text-body-small"
 									className={"label-on-text-field label-on-text-field-filled"}>
-									{_textConfiguration === "label-input" ||
-									_textConfiguration === "label-placeholder"
-										? _label
-										: ""}
+									{(_textConfiguration === "label-input" ||
+										_textConfiguration === "label-placeholder") &&
+										_label}
 								</Typography>
 							)}
 						<input
@@ -141,7 +140,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 						<IconButton
 							onClick={handleResetTextFieldValue}
 							className="trailing-icon-on-text-field">
-							{!isValidInput ? "error" : "cancel"}
+							{!_isValidInput ? "error" : "cancel"}
 						</IconButton>
 					)}
 				</div>
@@ -150,10 +149,10 @@ const TextField: React.FC<ITextFieldProps> = ({
 				<div
 					className={
 						"text-field-active-indicator" +
-						(isFocused ? " text-field-active-indicator-active" : "") +
+						(_isFocused ? " text-field-active-indicator-active" : "") +
 						" " +
 						("text-field-active-indicator-" + _theme) +
-						(!isValidInput ? " " + "text-field-active-indicator-error" : "")
+						(!_isValidInput ? " " + "text-field-active-indicator-error" : "")
 					}></div>
 			)}
 			<Typography
@@ -161,7 +160,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 					"text-field-supporting-text text-field-supporting-text-" + _theme
 				}
 				variant="text-body-small">
-				{children}
+				{_children}
 			</Typography>
 		</div>
 	);

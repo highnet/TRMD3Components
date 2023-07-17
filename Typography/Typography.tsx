@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { ITypographyProps } from "./ITypographyProps";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { getPreferredScheme } from "../Gizmos/Themeing";
+import React, {useState} from "react";
+import {ITypographyProps} from "./ITypographyProps";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {getPreferredScheme} from "../Gizmos/Themeing";
 
-function splitProps(props: string): string[] {
+function splitVariants(props: string): string[] {
 	let parts = props.split("-");
 	let output: string[] = [];
 	for (let i = 0; i < parts.length; i++) {
@@ -28,16 +28,17 @@ const Typography: React.FC<ITypographyProps> = ({
 	const [_id] = useState(id || undefined);
 	const [_className] = useState(className || "");
 	const [_variant] = useState(variant || "text-body-small");
+	const [_children] = useState(children || undefined);
 
-	let _computedSplitProps = splitProps(_variant);
+	let _computedSplitVariants = splitVariants(_variant);
 
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
 	let _computedComponentClassName = new StringBuilder()
-		.add(_computedSplitProps[0])
-		.add(_computedSplitProps[1])
-		.add(_computedSplitProps[2])
+		.add(_computedSplitVariants[0])
+		.add(_computedSplitVariants[1])
+		.add(_computedSplitVariants[2])
 		.add("typography")
 		.add("typography-" + _theme)
 		.add(_className)
@@ -49,9 +50,8 @@ const Typography: React.FC<ITypographyProps> = ({
 			className={_computedComponentClassName}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
-			onMouseMove={onMouseMove}
-		>
-			{children}
+			onMouseMove={onMouseMove}>
+			{_children}
 		</div>
 	);
 };

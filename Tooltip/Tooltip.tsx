@@ -20,13 +20,14 @@ const Tooltip: React.FC<ITooltipProps> = ({
 		children ||
 			"Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
 	);
-	const [_configuration] = useState(
-		triggerComponent ? "plain-multiline" : configuration || "rich"
-	);
+
 	const [_title] = useState(title || "Title");
 	const [_buttons] = useState(buttons || undefined);
 	const [_showActions] = useState(!!_buttons);
-
+	const [_triggerComponent] = useState(triggerComponent || undefined);
+	const [_configuration] = useState(
+		_triggerComponent ? "plain-multiline" : configuration || "rich"
+	);
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
@@ -44,12 +45,12 @@ const Tooltip: React.FC<ITooltipProps> = ({
 				? "tooltip-plain"
 				: ""
 		)
-		.add(triggerComponent ? "tooltip-with-trigger-component" : "")
-		.add(triggerComponent ? "invisible" : "")
+		.add(_triggerComponent ? "tooltip-with-trigger-component" : "")
+		.add(_triggerComponent ? "invisible" : "")
 		.add(_className)
 		.toString();
 
-	const actionButtons = _showActions && (
+	const _actionButtons = _showActions && (
 		<div className="tooltip-actions">
 			{_buttons?.map((button, index) => (
 				<Button key={index} onClick={button.onClick} configuration="text">
@@ -59,7 +60,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
 		</div>
 	);
 
-	const titleComponent = _configuration === "rich" && (
+	const _titleComponent = _configuration === "rich" && (
 		<Typography className="title-on-tooltip" variant="text-title-small">
 			{_title}
 		</Typography>
@@ -93,7 +94,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
 		<div>
 			<div id={_id} className={_computedComponentClassName} ref={tooltipRef}>
 				<div className="tooltip-content">
-					{titleComponent}
+					{_titleComponent}
 					<Typography
 						className="supporting-text-on-tooltip"
 						variant={
@@ -105,11 +106,11 @@ const Tooltip: React.FC<ITooltipProps> = ({
 						{_children}
 					</Typography>
 				</div>
-				{actionButtons}
+				{_actionButtons}
 			</div>
 			<div ref={triggerRef}>
-				{triggerComponent &&
-					React.cloneElement(triggerComponent, {
+				{_triggerComponent &&
+					React.cloneElement(_triggerComponent, {
 						onMouseMove: handleMouseMove,
 						onMouseEnter: handleSetTooltipVisible,
 						onMouseLeave: handleSetTooltipVisible,

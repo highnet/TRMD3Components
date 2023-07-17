@@ -12,10 +12,10 @@
 	The inset divs, if present, have their width, height, and color based on the props and state variables
 */
 
-import React, { useState } from "react";
-import { IHorizontalDividerProps } from "./IHorizontalDividerProps";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
+import React, {useState} from "react";
+import {IHorizontalDividerProps} from "./IHorizontalDividerProps";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
 
 const HorizontalDivider: React.FC<IHorizontalDividerProps> = ({
 	id,
@@ -70,17 +70,14 @@ const HorizontalDivider: React.FC<IHorizontalDividerProps> = ({
 
 	return (
 		<div id={_id} className={_computedComponentClassName}>
-			{_inset == "right" || _inset == "center" ? (
+			{(_inset == "right" || _inset == "center") && (
 				<div
 					className={_computedComponentInsetRightClassName}
 					style={{
 						height: _computedHeight,
 						width: _computedInsetRightWidth,
 						backgroundColor: _computedInsetColor,
-					}}
-				></div>
-			) : (
-				""
+					}}></div>
 			)}
 
 			<div
@@ -88,20 +85,16 @@ const HorizontalDivider: React.FC<IHorizontalDividerProps> = ({
 				style={{
 					width: _computedWidth,
 					height: _computedHeight,
-				}}
-			></div>
+				}}></div>
 
-			{_inset == "left" || _inset == "center" ? (
+			{(_inset == "left" || _inset == "center") && (
 				<div
 					className={_computedComponentInsetLeftClassName}
 					style={{
 						height: _computedHeight,
 						width: _computedInsetLeftWidth,
 						backgroundColor: _computedInsetColor,
-					}}
-				></div>
-			) : (
-				""
+					}}></div>
 			)}
 		</div>
 	);
