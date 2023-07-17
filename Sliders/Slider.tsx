@@ -33,7 +33,7 @@ const Slider: React.FC<ISliderProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("slider")
 		.add("slider-" + _theme)
 		.add(_className)

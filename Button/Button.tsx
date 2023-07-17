@@ -47,7 +47,7 @@ const Button: React.FC<IButtonProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("button")
 		.add("button-" + _config)
 		.add(_iconName ? "button-with-icon" : "")

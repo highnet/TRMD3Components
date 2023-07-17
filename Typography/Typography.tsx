@@ -4,8 +4,8 @@ import {StringBuilder} from "../Gizmos/StringBuilder";
 import {getPreferredScheme} from "../Gizmos/Themeing";
 
 function splitVariants(props: string): string[] {
-	let parts = props.split("-");
-	let output: string[] = [];
+	const parts = props.split("-");
+	const output: string[] = [];
 	for (let i = 0; i < parts.length; i++) {
 		if (i === 0) {
 			output.push(parts[i]);
@@ -30,12 +30,12 @@ const Typography: React.FC<ITypographyProps> = ({
 	const [_variant] = useState(variant || "text-body-small");
 	const [_children] = useState(children || undefined);
 
-	let _computedSplitVariants = splitVariants(_variant);
+	const _computedSplitVariants = splitVariants(_variant);
 
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add(_computedSplitVariants[0])
 		.add(_computedSplitVariants[1])
 		.add(_computedSplitVariants[2])

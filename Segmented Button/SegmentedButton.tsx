@@ -16,14 +16,12 @@ const SegmentedButton: React.FC<ISegmentedButtonProps> = ({
 	icon,
 	selected,
 	label,
-	value,
 }) => {
 	const [_className] = useState(className || "");
 	const [_id] = useState(id || undefined);
 	const [_children] = useState(label || "");
 	const [_position] = useState(position || "center");
 	const [_icon] = useState(icon || undefined);
-	const [_value] = useState(value || undefined);
 
 	const [_selected, setSelected] = useState(selected || false);
 
@@ -34,7 +32,7 @@ const SegmentedButton: React.FC<ISegmentedButtonProps> = ({
 		setSelected(selected || false);
 	}, [selected]);
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("segmented-button")
 		.add("segmented-button-" + _theme)
 		.add("segmented-button-" + _position)

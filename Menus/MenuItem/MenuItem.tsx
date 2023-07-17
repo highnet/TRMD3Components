@@ -83,7 +83,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({
 		}, 100);
 	};
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("menu-item")
 		.add("menu-item-" + _theme)
 		.add(_showDivider ? "menu-item-with-divider" : "")

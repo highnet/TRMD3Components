@@ -15,10 +15,10 @@
 	button is clicked, followed by the click function defined in the component.
 */
 
-import React, { useState } from "react";
-import { IRadioButtonProps } from "./IRadioButtonProps";
-import { getPreferredScheme } from "../Gizmos/Themeing";
-import { StringBuilder } from "../Gizmos/StringBuilder";
+import React, {useState} from "react";
+import {IRadioButtonProps} from "./IRadioButtonProps";
+import {getPreferredScheme} from "../Gizmos/Themeing";
+import {StringBuilder} from "../Gizmos/StringBuilder";
 
 const RadioButton: React.FC<IRadioButtonProps> = ({
 	disabled,
@@ -43,14 +43,14 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("radio-button")
 		.add("radio-button-" + (_disabled ? "disabled" : "enabled"))
 		.add("radio-button-" + _theme)
 		.add(_className)
 		.toString();
 
-	let _computedComponentInputClassName = new StringBuilder()
+	const _computedComponentInputClassName = new StringBuilder()
 		.add("radio-button-input")
 		.add("radio-button-input-" + (_disabled ? "disabled" : "enabled"))
 		.add("radio-button-input-" + _theme)
@@ -62,8 +62,7 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
 			id={_id}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
-			onMouseMove={onMouseMove}
-		>
+			onMouseMove={onMouseMove}>
 			<input
 				className={_computedComponentInputClassName}
 				type="radio"

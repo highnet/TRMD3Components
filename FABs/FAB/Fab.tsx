@@ -53,7 +53,7 @@ const Fab: React.FC<IFabProps> = ({
 		};
 	}, [boxRef, innerCircleRef]);
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("fab")
 		.add("fab-" + _size)
 		.add("fab-" + _config)

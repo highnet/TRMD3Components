@@ -75,7 +75,7 @@ const TopAppBar: React.FC<ITopAppBarProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("top-app-bar")
 		.add("top-app-bar-" + _theme)
 		.add("top-app-bar-" + _configuration)

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
-import { IAssistChipProps } from "./IAssistChipProps";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
+import {IAssistChipProps} from "./IAssistChipProps";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
 import Icon from "../../Icon/Icon";
 import Typography from "../../Typography/Typography";
 
@@ -40,7 +40,7 @@ const AssistChip: React.FC<IAssistChipProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("chip")
 		.add("assistchip")
 		.add(_disabled ? "assistchip-disabled" : "")
@@ -58,8 +58,7 @@ const AssistChip: React.FC<IAssistChipProps> = ({
 			onClick={onClick}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
-			onMouseMove={onMouseMove}
-		>
+			onMouseMove={onMouseMove}>
 			{_iconType === "icon" && (
 				<Icon className="icon-on-assistchip">{_iconName}</Icon>
 			)}

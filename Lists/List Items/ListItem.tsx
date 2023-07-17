@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
-import { IListItemProps } from "./IlistItemProps";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
+import React, {useEffect, useState, useRef} from "react";
+import {IListItemProps} from "./IlistItemProps";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
 import Typography from "../../Typography/Typography";
 import Icon from "../../Icon/Icon";
 import Checkbox from "../../Checkbox/Checkbox";
@@ -55,7 +55,7 @@ const ListItem: React.FC<IListItemProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("list-item")
 		.add("list-item-" + _theme)
 		.add("list-item-" + _size)
@@ -104,8 +104,7 @@ const ListItem: React.FC<IListItemProps> = ({
 						onChange={onElementChange}
 						name={radioButtonGroupName}
 						value={radioButtonValue}
-						defaultChecked={elementSelected}
-					></RadioButton>
+						defaultChecked={elementSelected}></RadioButton>
 				</div>
 			)}
 			{_leadingElement === "switch" && (
@@ -116,8 +115,7 @@ const ListItem: React.FC<IListItemProps> = ({
 						selected={elementSelected}
 						icon={true}
 						iconNameSelected={switchIconNameSelected}
-						iconNameDeselected={switchIconNameDeselected}
-					></Switch>
+						iconNameDeselected={switchIconNameDeselected}></Switch>
 				</div>
 			)}
 		</div>
@@ -183,8 +181,7 @@ const ListItem: React.FC<IListItemProps> = ({
 			onMouseLeave={onMouseLeave}
 			onMouseMove={onMouseMove}
 			onClick={onClick}
-			ref={boxRef}
-		>
+			ref={boxRef}>
 			<div className="list-item-state-layer">
 				<div className="list-item-leading-element">
 					{_leadingElementComponent}
@@ -196,8 +193,7 @@ const ListItem: React.FC<IListItemProps> = ({
 					{_size !== "1-line" && (
 						<Typography
 							variant="text-body-medium"
-							className="supporting-text-on-list-item"
-						>
+							className="supporting-text-on-list-item">
 							{children}
 						</Typography>
 					)}

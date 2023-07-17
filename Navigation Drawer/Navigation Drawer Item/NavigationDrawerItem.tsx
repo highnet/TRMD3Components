@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
-import { INavigationDrawerItemProps } from "./INavigationDrawerItemProps";
+import React, {useState} from "react";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
+import {INavigationDrawerItemProps} from "./INavigationDrawerItemProps";
 import Icon from "../../Icon/Icon";
 import Typography from "../../Typography/Typography";
 
@@ -24,7 +24,7 @@ const NavigationDrawerItem: React.FC<INavigationDrawerItemProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("navigation-drawer-item")
 		.add("navigation-drawer-item-" + _theme)
 		.add(
@@ -42,8 +42,7 @@ const NavigationDrawerItem: React.FC<INavigationDrawerItemProps> = ({
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
 			onMouseMove={onMouseMove}
-			onClick={onClick}
-		>
+			onClick={onClick}>
 			<div className="navigation-drawer-state-layer">
 				{_leadingIcon && (
 					<Icon className="icon-on-navigation-drawer" filled={true}>
@@ -53,16 +52,14 @@ const NavigationDrawerItem: React.FC<INavigationDrawerItemProps> = ({
 				{label && (
 					<Typography
 						className="label-on-navigation-drawer"
-						variant={_interactive ? "text-label-large" : "text-title-small"}
-					>
+						variant={_interactive ? "text-label-large" : "text-title-small"}>
 						{label}
 					</Typography>
 				)}
 				{trailingText && (
 					<Typography
 						className="trailing-text-on-navigation-drawer"
-						variant="text-label-large"
-					>
+						variant="text-label-large">
 						{trailingText}
 					</Typography>
 				)}

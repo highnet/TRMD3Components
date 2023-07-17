@@ -34,7 +34,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
 	const tooltipRef = useRef<HTMLDivElement>(null);
 	const triggerRef = useRef<HTMLDivElement>(null);
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("tooltip")
 		.add("tooltip-" + _theme)
 		.add("tooltip-" + _configuration)

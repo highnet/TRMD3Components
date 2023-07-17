@@ -74,7 +74,7 @@ const Dialog: React.FC<IDIalogProps> = ({
 		};
 	}, []);
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("dialog")
 		.add("dialog-" + _theme)
 		.add("dialog-" + _configuration)

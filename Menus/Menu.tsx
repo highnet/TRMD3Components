@@ -20,7 +20,7 @@ const Menu: React.FC<IMenuProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("menu")
 		.add("menu-" + _theme)
 		.add(_className)

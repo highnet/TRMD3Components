@@ -40,30 +40,30 @@ const HorizontalDivider: React.FC<IHorizontalDividerProps> = ({
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
 	const REM_BASE = 10; // 1 rem = 10px
-	let _computedHeight: string = `${_height / REM_BASE}rem`;
-	let _computedWidth: string = `${_width / REM_BASE}rem`;
-	let _computedInsetRightWidth: string = `${_insetRightWidth / REM_BASE}rem`;
-	let _computedInsetLeftWidth: string = `${_insetLeftWidth / REM_BASE}rem`;
-	let _computedInsetColor: string = _showInsets ? "red" : "transparent";
+	const _computedHeight: string = `${_height / REM_BASE}rem`;
+	const _computedWidth: string = `${_width / REM_BASE}rem`;
+	const _computedInsetRightWidth: string = `${_insetRightWidth / REM_BASE}rem`;
+	const _computedInsetLeftWidth: string = `${_insetLeftWidth / REM_BASE}rem`;
+	const _computedInsetColor: string = _showInsets ? "red" : "transparent";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("divider")
 		.add("horizontaldivider")
 		.add("horizontaldivider-" + _theme)
 		.add(_className)
 		.toString();
 
-	let _computedComponentInsetRightClassName = new StringBuilder()
+	const _computedComponentInsetRightClassName = new StringBuilder()
 		.add("horizontaldivider-inset-right")
 		.add("horizontaldivider-inset-right-" + _theme)
 		.toString();
 
-	let _computedComponentBarClassName = new StringBuilder()
+	const _computedComponentBarClassName = new StringBuilder()
 		.add("horizontaldivider-bar")
 		.add("horizontaldivider-bar-" + _theme)
 		.toString();
 
-	let _computedComponentInsetLeftClassName = new StringBuilder()
+	const _computedComponentInsetLeftClassName = new StringBuilder()
 		.add("horizontaldivider-inset-left")
 		.add("horizontaldivider-inset-left-" + _theme)
 		.toString();

@@ -27,7 +27,7 @@ const IconButton: React.FC<IIconButtonProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("icon-button")
 		.add("icon-button-" + _theme)
 		.add("icon-button-" + _configuration)

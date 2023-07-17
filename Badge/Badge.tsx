@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { IBadgeProps } from "./IBadgeProps";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { getPreferredScheme } from "../Gizmos/Themeing";
+import React, {useState} from "react";
+import {IBadgeProps} from "./IBadgeProps";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {getPreferredScheme} from "../Gizmos/Themeing";
 import Typography from "../Typography/Typography";
 
 /*  
@@ -53,23 +53,23 @@ const Badge: React.FC<IBadgeProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedXOffset: string = _xOffset.toString() + "rem";
-	let _computedYOffset: string = _yOffset.toString() + "rem";
+	const _computedXOffset: string = _xOffset.toString() + "rem";
+	const _computedYOffset: string = _yOffset.toString() + "rem";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("badge")
 		.add("badge-" + _config)
 		.add("badge-" + _theme)
 		.add(_className)
 		.toString();
 
-	let _computedComponentLabelClassName = new StringBuilder()
+	const _computedComponentLabelClassName = new StringBuilder()
 		.add("badge-label-text")
 		.add("badge-label-text-" + _config)
 		.add("badge-label-text-" + _theme)
 		.toString();
 
-	let style: React.CSSProperties = {
+	const style: React.CSSProperties = {
 		transform: `translate(${_computedXOffset}, ${_computedYOffset})`,
 	};
 
@@ -98,12 +98,10 @@ const Badge: React.FC<IBadgeProps> = ({
 			style={style}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
-			onMouseMove={onMouseMove}
-		>
+			onMouseMove={onMouseMove}>
 			<Typography
 				variant="text-label-small"
-				className={_computedComponentLabelClassName}
-			>
+				className={_computedComponentLabelClassName}>
 				{_children}
 			</Typography>
 		</div>

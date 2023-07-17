@@ -21,10 +21,10 @@
 	function updates the selected state and triggers the click function.
 */
 
-import React, { useState } from "react";
-import { ICheckboxProps } from "./ICheckboxProps";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { getPreferredScheme } from "../Gizmos/Themeing";
+import React, {useState} from "react";
+import {ICheckboxProps} from "./ICheckboxProps";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {getPreferredScheme} from "../Gizmos/Themeing";
 import Icon from "../Icon/Icon";
 
 const Checkbox: React.FC<ICheckboxProps> = ({
@@ -52,7 +52,7 @@ const Checkbox: React.FC<ICheckboxProps> = ({
 		setSelected(!_selected);
 	};
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("checkbox")
 		.add("checkbox-" + _config)
 		.add("checkbox-" + _theme)
@@ -61,11 +61,11 @@ const Checkbox: React.FC<ICheckboxProps> = ({
 		.add(_className)
 		.toString();
 
-	let _computedComponentIconClassName = new StringBuilder()
+	const _computedComponentIconClassName = new StringBuilder()
 		.add("icon-on-checkbox")
 		.toString();
 
-	let _computedComponentOverlayClassName = new StringBuilder()
+	const _computedComponentOverlayClassName = new StringBuilder()
 		.add("checkbox-overlay")
 		.toString();
 
@@ -79,8 +79,7 @@ const Checkbox: React.FC<ICheckboxProps> = ({
 			}}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
-			onMouseMove={onMouseMove}
-		>
+			onMouseMove={onMouseMove}>
 			{_selected && (
 				<Icon className={_computedComponentIconClassName}>check</Icon>
 			)}

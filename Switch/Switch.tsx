@@ -54,7 +54,7 @@ const Switch: React.FC<ISwitchProps> = ({
 		setSelected(!_selected);
 	};
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("switch")
 		.add("switch-" + (_selected ? "selected" : "deselected"))
 		.add("switch-" + (_disabled ? "disabled" : "enabled"))
@@ -63,7 +63,7 @@ const Switch: React.FC<ISwitchProps> = ({
 		.add(_className)
 		.toString();
 
-	let _computedComponentTrackClassName = new StringBuilder()
+	const _computedComponentTrackClassName = new StringBuilder()
 		.add("switch-track")
 		.add("switch-track-" + (_selected ? "selected" : "deselected"))
 		.add("switch-track-" + (_disabled ? "disabled" : "enabled"))
@@ -71,7 +71,7 @@ const Switch: React.FC<ISwitchProps> = ({
 		.add("switch-track-" + _theme)
 		.toString();
 
-	let _computedComponentHandleClassName = new StringBuilder()
+	const _computedComponentHandleClassName = new StringBuilder()
 		.add("switch-handle")
 		.add("switch-handle-" + (_selected ? "selected" : "deselected"))
 		.add("switch-handle-" + (_disabled ? "disabled" : "enabled"))
@@ -79,12 +79,12 @@ const Switch: React.FC<ISwitchProps> = ({
 		.add("switch-handle-" + _theme)
 		.toString();
 
-	let _computedComponentHandleOverlayClassName = new StringBuilder()
+	const _computedComponentHandleOverlayClassName = new StringBuilder()
 		.add("switch-handle-overlay")
 		.add("switch-handle-overlay-" + _theme)
 		.toString();
 
-	let _computedComponentIconClassName = new StringBuilder()
+	const _computedComponentIconClassName = new StringBuilder()
 		.add("material-symbols-outlined")
 		.add("icon-on-switch")
 		.add("icon-on-switch-" + (_selected ? "selected" : "deselected"))
@@ -106,19 +106,15 @@ const Switch: React.FC<ISwitchProps> = ({
 			<div className={_computedComponentTrackClassName}>
 				<div className={_computedComponentHandleClassName}>
 					<div className={_computedComponentHandleOverlayClassName}>
-						{_icon && _selected ? (
+						{_icon && _selected && (
 							<Icon className={_computedComponentIconClassName}>
 								{_iconNameSelected}
 							</Icon>
-						) : (
-							""
 						)}
-						{_icon && !_selected ? (
+						{_icon && !_selected && (
 							<Icon className={_computedComponentIconClassName}>
 								{_iconNameDeselected}
 							</Icon>
-						) : (
-							""
 						)}
 					</div>
 				</div>

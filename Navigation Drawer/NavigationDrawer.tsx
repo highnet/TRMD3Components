@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import { getPreferredScheme } from "../Gizmos/Themeing";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { INavigationDrawerProps } from "./INavigationDrawerProps";
+import React, {useEffect, useRef, useState} from "react";
+import {getPreferredScheme} from "../Gizmos/Themeing";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {INavigationDrawerProps} from "./INavigationDrawerProps";
 
 const NavigationDrawer: React.FC<INavigationDrawerProps> = ({
 	className,
@@ -42,7 +42,7 @@ const NavigationDrawer: React.FC<INavigationDrawerProps> = ({
 		}, 100);
 	};
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("navigation-drawer")
 		.add("navigation-drawer-" + _theme)
 		.add(_className)
@@ -53,14 +53,12 @@ const NavigationDrawer: React.FC<INavigationDrawerProps> = ({
 			id={_id}
 			className={_computedComponentClassName}
 			ref={navDrawerScrollRef}
-			onClick={handleNavDrawerClick}
-		>
+			onClick={handleNavDrawerClick}>
 			<ul
 				onMouseEnter={onMouseEnter}
 				onMouseLeave={onMouseLeave}
 				onMouseMove={onMouseMove}
-				onClick={onClick}
-			>
+				onClick={onClick}>
 				{children}
 			</ul>
 		</div>

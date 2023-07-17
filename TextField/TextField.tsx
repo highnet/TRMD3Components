@@ -44,7 +44,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("text-field")
 		.add("text-field-" + _theme)
 		.add(_disabled ? "text-field-disabled" : "")
@@ -136,7 +136,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 							onBlur={handleBlur}
 							onChange={onChange}></input>
 					</div>
-					{trailingIcon && (
+					{_trailingIcon && (
 						<IconButton
 							onClick={handleResetTextFieldValue}
 							className="trailing-icon-on-text-field">

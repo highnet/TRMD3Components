@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
+import {useState} from "react";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
 import Typography from "../../Typography/Typography";
-import { IHorizontalCardProps } from "./IHorizontalCardProps";
+import {IHorizontalCardProps} from "./IHorizontalCardProps";
+import React from "react";
 
 const HorizontalCard: React.FC<IHorizontalCardProps> = ({
 	id,
@@ -21,41 +22,48 @@ const HorizontalCard: React.FC<IHorizontalCardProps> = ({
 	const [_subhead] = useState(subhead || "Subhead");
 	const [_imageSrc] = useState(imageSrc || "default-media-small.png");
 
-    const _theme =
-    localStorage.getItem("theme") || getPreferredScheme() + "-theme";
+	const _theme =
+		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-    let _computedComponentClassName = new StringBuilder()
-    .add("card")
-    .add("horizontal-card")
-    .add("horizontal-card-" + _config)
-    .add("horizontal-card-" + _theme)
-    .add(_className)
-    .toString();
+	const _computedComponentClassName = new StringBuilder()
+		.add("card")
+		.add("horizontal-card")
+		.add("horizontal-card-" + _config)
+		.add("horizontal-card-" + _theme)
+		.add(_className)
+		.toString();
 
 	return (
 		<div id={_id} className={_computedComponentClassName}>
-            <div className="horizontal-card-header">
-                <div className="horizontal-card-header-content">
-                    <div className="horizontal-card-header-content-monogram">
-                        <Typography variant="text-title-medium" className={"horizontal-card-header-content-monogram-initial horizontal-card-header-content-monogram-initial-" + _theme}>{_initial}</Typography>
-                    </div>
-                    <div className="horizontal-card-header-content-text">
-                        <Typography 
-                            variant="text-title-medium"
-                            className="horizontal-card-header-content-text-header"
-                            >
-                            {_header}
-                        </Typography>
-                        <Typography 
-                            variant="text-body-medium"
-                            className="horizontal-card-header-content-text-subhead"
-                            >{_subhead}</Typography>
-                    </div>
-                </div>
-                <div className="horizontal-card-header-media">
-                <img src={_imageSrc}></img>
-                </div>
-            </div>
+			<div className="horizontal-card-header">
+				<div className="horizontal-card-header-content">
+					<div className="horizontal-card-header-content-monogram">
+						<Typography
+							variant="text-title-medium"
+							className={
+								"horizontal-card-header-content-monogram-initial horizontal-card-header-content-monogram-initial-" +
+								_theme
+							}>
+							{_initial}
+						</Typography>
+					</div>
+					<div className="horizontal-card-header-content-text">
+						<Typography
+							variant="text-title-medium"
+							className="horizontal-card-header-content-text-header">
+							{_header}
+						</Typography>
+						<Typography
+							variant="text-body-medium"
+							className="horizontal-card-header-content-text-subhead">
+							{_subhead}
+						</Typography>
+					</div>
+				</div>
+				<div className="horizontal-card-header-media">
+					<img src={_imageSrc}></img>
+				</div>
+			</div>
 		</div>
 	);
 };

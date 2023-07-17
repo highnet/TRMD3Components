@@ -37,7 +37,7 @@ const SideSheet: React.FC<ISideSheetProps> = ({
 
 	const sideSheetRef = useRef<HTMLDivElement>(null);
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("side-sheet")
 		.add("side-sheet-" + _theme)
 		.add(_className)

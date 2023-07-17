@@ -125,7 +125,7 @@ const NavigationRail: React.FC<INavigationRailProps> = ({
 		};
 	}, []);
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("navigation-rail")
 		.add("navigation-rail-" + _theme)
 		.add(_className)

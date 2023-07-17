@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { IExtendedFabProps } from "./IExtendedFabProps";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
+import React, {useState} from "react";
+import {IExtendedFabProps} from "./IExtendedFabProps";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
 import Icon from "../../Icon/Icon";
 import Typography from "../../Typography/Typography";
 
@@ -21,7 +21,7 @@ const ExtendedFab: React.FC<IExtendedFabProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("fab")
 		.add("fab-" + _config)
 		.add("fab-" + _theme)
@@ -31,7 +31,7 @@ const ExtendedFab: React.FC<IExtendedFabProps> = ({
 		.add(_className)
 		.toString();
 
-	let _computedComponentLabelClassName = new StringBuilder()
+	const _computedComponentLabelClassName = new StringBuilder()
 		.add("label-on-fab")
 		.add("label-on-fab-" + _theme)
 		.toString();
@@ -41,8 +41,7 @@ const ExtendedFab: React.FC<IExtendedFabProps> = ({
 			<Icon>{_iconName}</Icon>
 			<Typography
 				variant="text-label-large"
-				className={_computedComponentLabelClassName}
-			>
+				className={_computedComponentLabelClassName}>
 				{_children}
 			</Typography>
 		</button>

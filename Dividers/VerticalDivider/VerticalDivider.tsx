@@ -43,33 +43,33 @@ const VerticalDivider: React.FC<IVerticalDividerProps> = ({
 
 	const _REM_BASE = 10; // 1 rem = 10px
 
-	let _finalWidth: string = `${_width / _REM_BASE}rem`;
-	let _finalHeight: string = `${_height / _REM_BASE}rem`;
-	let _finalInsetTopHeight = `${_insetTopHeight / _REM_BASE}rem`;
-	let _finalInsetBottomHeight = `${_insetBottomHeight / _REM_BASE}rem`;
-	let _finalInsetColor: string = _showInsets ? "red" : "transparent";
+	const _finalWidth: string = `${_width / _REM_BASE}rem`;
+	const _finalHeight: string = `${_height / _REM_BASE}rem`;
+	const _finalInsetTopHeight = `${_insetTopHeight / _REM_BASE}rem`;
+	const _finalInsetBottomHeight = `${_insetBottomHeight / _REM_BASE}rem`;
+	const _finalInsetColor: string = _showInsets ? "red" : "transparent";
 
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("divider")
 		.add("verticaldivider")
 		.add("verticaldivider-" + _theme)
 		.add(_className)
 		.toString();
 
-	let _computedComponentInsetTopClassName = new StringBuilder()
+	const _computedComponentInsetTopClassName = new StringBuilder()
 		.add("verticaldivider-inset-top")
 		.add("verticaldivider-inset-top-" + _theme)
 		.toString();
 
-	let _computedComponentBarClassName = new StringBuilder()
+	const _computedComponentBarClassName = new StringBuilder()
 		.add("verticaldivider-bar")
 		.add("verticaldivider-bar-" + _theme)
 		.toString();
 
-	let _computedComponentInsetBottomClassName = new StringBuilder()
+	const _computedComponentInsetBottomClassName = new StringBuilder()
 		.add("verticaldivider-inset-bottom")
 		.add("verticaldivider-inset-bottom-" + _theme)
 		.toString();

@@ -48,7 +48,7 @@ const StackedCard: React.FC<IStackedCardsProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("card")
 		.add("stacked-card")
 		.add("stacked-card-" + _config)

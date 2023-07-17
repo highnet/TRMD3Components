@@ -27,7 +27,7 @@ const SnackBar: React.FC<ISnackBarProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("snackbar")
 		.add("snackbar-" + _theme)
 		.add(_className)

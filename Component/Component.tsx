@@ -18,7 +18,7 @@ const Component: React.FC<IComponentProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("component")
 		.add("component-" + _theme)
 		.add(_className)

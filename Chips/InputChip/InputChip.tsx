@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { IChipProps as IInputChipProps } from "./IInputChipProps";
-import { getPreferredScheme } from "../../Gizmos/Themeing";
-import { StringBuilder } from "../../Gizmos/StringBuilder";
+import React, {useState} from "react";
+import {IChipProps as IInputChipProps} from "./IInputChipProps";
+import {getPreferredScheme} from "../../Gizmos/Themeing";
+import {StringBuilder} from "../../Gizmos/StringBuilder";
 import Icon from "../../Icon/Icon";
 import Typography from "../../Typography/Typography";
 
@@ -15,7 +15,7 @@ function computeNumberOfItems(
 	if (trailingIconName) computedNumberOfItems++;
 	if (avatar) computedNumberOfItems++;
 
-	const numberToStringDictionary: { [name: number]: string } = {
+	const numberToStringDictionary: {[name: number]: string} = {
 		1: "one",
 		2: "two",
 		3: "three",
@@ -58,7 +58,7 @@ const InputChip: React.FC<IInputChipProps> = ({
 		setSelected(!_selected);
 	};
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("chip")
 		.add("inputchip")
 		.add(
@@ -90,8 +90,7 @@ const InputChip: React.FC<IInputChipProps> = ({
 			}}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
-			onMouseMove={onMouseMove}
-		>
+			onMouseMove={onMouseMove}>
 			{_avatarIconNameDeselected && _avatarIconNameSelected && (
 				<Icon className="avatar-on-inputchip">
 					{_selected ? _avatarIconNameSelected : _avatarIconNameDeselected}

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { StringBuilder } from "../Gizmos/StringBuilder";
-import { getPreferredScheme } from "../Gizmos/Themeing";
-import { IIconProps } from "./IIconProps";
+import React, {useState} from "react";
+import {StringBuilder} from "../Gizmos/StringBuilder";
+import {getPreferredScheme} from "../Gizmos/Themeing";
+import {IIconProps} from "./IIconProps";
 
 const Icon: React.FC<IIconProps> = ({
 	children = "search",
@@ -20,13 +20,13 @@ const Icon: React.FC<IIconProps> = ({
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("icon")
 		.add("icon-" + _theme)
 		.add(_className)
 		.toString();
 
-	let _computedComponentIconClassName = new StringBuilder()
+	const _computedComponentIconClassName = new StringBuilder()
 		.add("material-symbols")
 		.add("material-symbols-outlined")
 		.add(_filled ? "material-symbols-filled" : "")
@@ -38,8 +38,7 @@ const Icon: React.FC<IIconProps> = ({
 			onMouseLeave={onMouseLeave}
 			onMouseMove={onMouseMove}
 			onClick={onClick}
-			className={_computedComponentClassName}
-		>
+			className={_computedComponentClassName}>
 			<span id={_id} className={_computedComponentIconClassName}>
 				{children}
 			</span>

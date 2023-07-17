@@ -24,7 +24,7 @@ const SegmentedButtonGroup: React.FC<ISegmentedButtonGroupProps> = ({
 		setSelectedButtonIndex(index);
 	};
 
-	let _computedComponentClassName = new StringBuilder()
+	const _computedComponentClassName = new StringBuilder()
 		.add("segmented-button-group")
 		.add(_className)
 		.toString();
@@ -37,7 +37,7 @@ const SegmentedButtonGroup: React.FC<ISegmentedButtonGroupProps> = ({
 			} else if (index === children.length - 1) {
 				position = "right";
 			}
-			let newChild = React.cloneElement(child, {
+			const newChild = React.cloneElement(child, {
 				onClick: (event: React.MouseEvent<HTMLButtonElement>) => {
 					child.props.onClick && child.props.onClick(event);
 					handleButtonClick(index);
@@ -51,7 +51,7 @@ const SegmentedButtonGroup: React.FC<ISegmentedButtonGroupProps> = ({
 
 	useEffect(() => {
 		if (selectedButtonIndex !== -1) {
-			let newValue = children[selectedButtonIndex].props.value;
+			const newValue = children[selectedButtonIndex].props.value;
 			onSelectedValueChange && onSelectedValueChange(newValue);
 		}
 	}, [selectedButtonIndex, children, onSelectedValueChange]);
