@@ -19,7 +19,7 @@ const SideSheet: React.FC<ISideSheetProps> = ({
 	title,
 	trailingIcon,
 	leadingIcon,
-	content: contents,
+	contents,
 	buttons,
 }) => {
 	const [_className] = useState(className || "");
