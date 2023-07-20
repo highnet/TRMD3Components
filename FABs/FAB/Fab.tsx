@@ -1,3 +1,26 @@
+/*
+The code imports required modules and components from various files to use in the
+Fab component. The main component is defined as a functional component named Fab.
+It takes in several props representing the button's configuration and content.
+The component uses the React useState hook to handle some state variables,
+setting default values for certain props if they are not provided.
+The useRef hook is used to create references to the outer button element (boxRef)
+and the inner circle span element (innerCircleRef). These references are later
+used to apply the pulsating effect. The component retrieves the preferred theme
+from local storage or uses a default theme and applies appropriate CSS classes 
+to style the button accordingly. The useEffect hook is used to add and remove an
+event listener to the button's "mousemove" event. This listener calculates the
+cursor's position within the button and moves the inner circle accordingly to
+create the pulsating effect. The component uses StringBuilder utility to create
+a string representing the CSS class names for the button based on various
+configurations, such as size, configuration (color scheme), and theme. The JSX
+code renders the Fab button inside a div container. Inside the button, it
+displays an Icon component, representing the button's icon, and a <span>
+element with the class "fab-inner-circle" to create the pulsating effect.
+The component renders a Typography component below the button to display the
+children prop, which can be used to provide a label for the Fab button.
+*/
+
 import React, {useState, useEffect, useRef} from "react";
 import {IFabProps} from "./IFabProps";
 import {getPreferredScheme} from "../../Gizmos/Themeing";

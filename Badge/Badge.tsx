@@ -1,34 +1,35 @@
+/*
+	This React functional component renders a customizable badge element.
+	It displays text content and can be positioned with optional x and y offsets.
+	The component takes the following props:
+  	children: The text content to display within the badge.
+    id: Optional ID attribute for the root div element.
+    className: Additional custom classes for the badge element.
+    configuration: Configuration of the badge, defaults to "small".
+    xOffset: Horizontal offset in rem units, defaults to 0.
+    yOffset: Vertical offset in rem units, defaults to 0.
+    onMouseEnter: Optional callback function when the mouse enters the badge area.
+    onMouseLeave: Optional callback function when the mouse leaves the badge area.
+    onMouseMove: Optional callback function when the mouse moves within the badge area.
+    anchor: Determines the positioning of the badge relative to the anchor point.
+    Options: "top-left" (default), "top-right", "bottom-left", "bottom-right".
+	
+	The badge's appearance is influenced by the selected theme, which is retrieved
+	from local storage or determined based on the user's preferred scheme.
+	The theme classes are applied to the badge and its label text. The badge's
+	position can be fine-tuned using x and y offsets. The badge can be positioned
+	in one of the four corners of its container using the "anchor" prop. The
+	component internally uses a StringBuilder to construct CSS class names. The
+	badge element contains a Typography component to display the provided text
+	content.The typography variant can be customized using the "text-label-small"
+	class.
+*/
+
 import React, {useState} from "react";
 import {IBadgeProps} from "./IBadgeProps";
 import {StringBuilder} from "../Gizmos/StringBuilder";
 import {getPreferredScheme} from "../Gizmos/Themeing";
 import Typography from "../Typography/Typography";
-
-/*  
-	1
-	1682360238
-
-	This code defines a React functional component called "Badge". The component creates
-	a badge element that can be customized with several props such as "children", "id",
-	"className", "configuration", "xOffset", "yOffset", and "label".
-
-	The useState hook is used to create several state variables that hold the values passed
-	via the corresponding props. If no value is passed, a default value is used instead.
-
-	The "_computedXOffset" and "_computedYOffset" variables calculate the final values
-	for the X and Y offsets respectively. These values are computed based on the "xOffset"
-	and "yOffset" values passed via props and converted to a string with a percent sign.
-
-	The "_computedComponentClassName" and "_computedComponentLabelClassName" variables
-	hold the CSS class names for the badge element and label element respectively. These
-	class names are constructed using the StringBuilder class and concatenated with the
-	configuration value passed via props.
-
-	Finally, the JSX element for the badge is returned. It is a <div> element with an
-	optional "id" and "className" attribute. The computed X and Y offsets are applied
-	using the "style" attribute. The label and children (if any) are rendered within the
-	<div> element.
-*/
 
 const Badge: React.FC<IBadgeProps> = ({
 	children,

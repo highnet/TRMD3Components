@@ -1,3 +1,24 @@
+/*
+The code imports required modules and components from various files to use in t
+he Dialog component. The main component is defined as a functional component
+named Dialog. It takes in various props representing the dialog's configuration
+and content. The component uses the React useState hook to handle some state
+variables, setting default values for certain props if they are not provided.
+The useRef hook is used to create a reference to the dialog element, which is
+later used to manipulate the dialog's visibility. The component retrieves the
+preferred theme from local storage or uses a default theme and applies appropriate
+CSS classes to style the dialog accordingly. If the buttons prop is provided,
+the component renders action buttons for the dialog. If showCloseButton is true,
+a "Close" button is also added. The useEffect hook is used to add and remove an
+event listener to the dialog's close event, allowing the dialog to be
+programmatically closed. A StringBuilder utility is used to create a string 
+representing the CSS class names for the dialog, based on various configurations.
+he JSX code renders the dialog using the <dialog> element. Inside the dialog,
+it displays the title, children content, an optional icon, and a divider if
+specified. If the configuration is set to "list," it also renders the provided
+listComponent.
+*/
+
 import React, {useState, useRef, useEffect} from "react";
 import {getPreferredScheme} from "../Gizmos/Themeing";
 import {StringBuilder} from "../Gizmos/StringBuilder";

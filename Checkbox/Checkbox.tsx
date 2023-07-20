@@ -1,24 +1,22 @@
 /* 
-	1
-	1682423199
-
-	This code is a functional component called Checkbox that creates a checkbox
-	element in React.
-
-	The component uses states for disabled, id, className, configuration, and
-	selected, which can be initialized with provided props or default values.
-
-	The component has two functions: click that logs a message to the console, and
-	handleClick that updates the selected state and triggers the click function.
-
-	The component uses a StringBuilder to build class names for the different
-	components of the checkbox based on the states and props.
-
-	The returned JSX element includes an icon and overlay element, and any child
-	elements provided.
-
-	The onChange prop is called when the checkbox is clicked, and the handleClick
-	function updates the selected state and triggers the click function.
+The code defines a React functional component called Checkbox. This component
+represents a customizable checkbox element that can be selected or deselected.
+The checkbox supports several properties that can be passed as props, such as
+'disabled', 'id', 'className', 'configuration', 'onChange', 'selected',
+'onMouseEnter', 'onMouseLeave', and 'onMouseMove'. The checkbox appearance and
+behavior are determined based on these props and internal states. It uses the
+'useState' hook from React to set internal state variables for 'disabled', 'id',
+'className', 'configuration', and 'selected'. The checkbox can be in a selected
+or deselected state, and it can also be disabled to prevent interactions. The
+checkbox's theme is derived from the 'localStorage' or a default theme based on
+the user's preference and is used to determine the checkbox's appearance. The
+checkbox element is created with the calculated class name based on its
+configuration and state. When clicked, the 'handleClick' function toggles the
+'selected' state, and the 'onChange' callback is called if provided. If the
+checkbox is selected, it displays an 'Icon' component with a checkmark icon.
+The checkmark icon is created with a specific class name for styling purposes.
+The checkbox element also includes an empty <div> element that serves as an
+overlay, allowing additional styling and interaction effects.
 */
 
 import React, {useState} from "react";

@@ -1,19 +1,17 @@
 /*
-	1
-	1682423199
-
-	This code defines a React functional component called Button that takes in
-	several props, including whether the button is disabled, its ID, a class name,
-	an onClick function, and the button's configuration.
-
-	State variables are used to set default values for the props. A string of class
-	names is created based on the current configuration and whether the button has
-	an icon.
-
-	A click function logs a message to the console when the button is clicked. The
-	component returns a button JSX element with the appropriate props and class
-	names, including a span element with the icon's name if the button has an icon.
-	The onClick function is set to execute the prop function and the click function.
+This is a React functional component representing a customizable Button element.
+It receives props such as 'disabled', 'children', 'id', 'className', 'onClick',
+'configuration', 'iconName', 'onMouseEnter', 'onMouseLeave', and 'onMouseMove'.
+It uses the 'useState' hook from React to set internal state variables for
+'disabled', 'id', 'className', 'configuration', 'iconName', and 'children'.
+The button's appearance and behavior are determined based on these props
+and internal states. It also utilizes the 'StringBuilder' class from 
+"../Gizmos/StringBuilder" to construct a CSS class string for the button element.
+The button's theme is derived from the 'localStorage' or a default theme based
+on the user's preference and is used to determine the button's appearance. The
+final button element is created with the calculated class name and
+includes optional rendering of an 'Icon' component and 'Typography' component
+for icon and text content, respectively.
 */
 
 import React, {useState} from "react";
@@ -40,9 +38,7 @@ const Button: React.FC<IButtonProps> = ({
 	const [_className] = useState(className || "");
 	const [_config] = useState(configuration || "filled");
 	const [_iconName] = useState(iconName || undefined);
-	const [_children] = useState(
-		children || (_disabled ? "Disabled" : "Enabled")
-	);
+	const [_children] = useState(children || "Label");
 
 	const _theme =
 		localStorage.getItem("theme") || getPreferredScheme() + "-theme";
@@ -66,7 +62,9 @@ const Button: React.FC<IButtonProps> = ({
 			onMouseLeave={onMouseLeave}
 			onMouseMove={onMouseMove}>
 			{_iconName && <Icon>{_iconName}</Icon>}
-			<Typography variant="text-label-large">{_children}</Typography>
+			{_children && (
+				<Typography variant="text-label-large">{_children}</Typography>
+			)}
 		</button>
 	);
 };

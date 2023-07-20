@@ -1,3 +1,26 @@
+/*
+id: The unique identifier for the card element. className: Additional custom
+CSS class names for the card. configuration: The configuration style of the
+card (e.g., "outlined"). initial: The initial character displayed as the
+monogram (default: "A"). header: The main header text of the card
+(default: "Header"). subhead: The subhead text of the card (default: "Subhead").
+imageSrc: The source URL for the image displayed in the card (default: 
+default-media-small.png"). The component uses React hooks to manage its state
+for the props and also handles the theme based on the user's preference or
+system setting. The rendered card's class name is dynamically generated based
+on the provided props, configuration, and theme, and it will have the following
+classes: "card": General card styling. "horizontal-card": Specific styling for
+a horizontal card layout. "horizontal-card-[configuration]": Styling specific
+to the chosen configuration. "horizontal-card-[theme]": Styling specific to
+the chosen theme (retrieved from localStorage or using the preferred scheme).
+Additional custom CSS class names provided via "className" prop.
+The card's header section consists of a monogram, header text, and subhead text,
+all stylized with Typography components. The monogram displays the first
+character of the "initial" prop or "A" if not provided. The header and subhead
+text are set to default values if not provided. The card's image section displays
+the image provided via the "imageSrc" prop.
+*/
+
 import {useState} from "react";
 import {StringBuilder} from "../../Gizmos/StringBuilder";
 import {getPreferredScheme} from "../../Gizmos/Themeing";

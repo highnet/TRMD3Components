@@ -1,3 +1,21 @@
+/*
+The code defines a React functional component called Carousel. This component
+represents an image carousel that displays a collection of images with
+associated labels and supporting text. The carousel has several customizable
+properties such as 'id', 'className', 'images', 'width', and 'uniformWidths'
+that can be passed as props to customize its behavior and appearance.
+The 'images' prop contains an array of objects, each representing an image
+to be displayed in the carousel. Each object contains 'imageSource', 'label',
+and 'supportingText' properties. The carousel's appearance and functionality are
+determined by various CSS classes and JavaScript event handlers. The carousel
+uses the 'useState' and 'useRef' hooks from React to manage its state and access
+the DOM element. The carousel allows navigation through the images by clicking
+or touching on the left or right half of the carousel. The images scroll into
+view smoothly when changing the currently displayed image. The 'Typography'
+component from "../Typography/Typography" is used to render labels and
+supporting text for the images when applicable.
+*/
+
 import React, {useState, useRef} from "react";
 import {ICarouselProps} from "./ICarouselProps";
 import {StringBuilder} from "../Gizmos/StringBuilder";
