@@ -1,15 +1,22 @@
 /*
-	1
-	1682423199
-
-	The code defines a React function component called HorizontalDivider that accepts props.
-	The props include optional values for ID, class name, height, width, inset, insetRightWidth, insetLeftWidth, and showInsets.
-	The component initializes state variables for each of the props.
-	The component calculates various styles based on the props and state variables.
-	The component uses StringBuilder to build a class name for the component.
-	The component returns a div element that includes one or two inset divs and a horizontal bar div.
-	The horizontal bar div has a class name based on the theme, and its width and height are based on the props and state variables.
-	The inset divs, if present, have their width, height, and color based on the props and state variables
+This code defines a React functional component named HorizontalDivider,
+used to render a horizontal divider on a webpage. The component accepts
+several props, including id, className, height, width, inset, insetRightWidth,
+insetLeftWidth, and showInsets. If any of these props are not provided,
+default values are used. The component calculates the appropriate dimensions
+and styles for the divider based on the provided or default props. It uses
+a StringBuilder utility to construct classNames for different parts of the
+divider based on the selected theme and custom classNames. The divider
+consists of three parts: inset on the right side, the main horizontal bar,
+and inset on the left side. The presence and width of the insets depend on
+the 'inset' prop, which can be set to "none", "right", "left", or "center".
+If 'showInsets' is true, the inset areas will have a red background,
+otherwise, they will be transparent. The heights and widths are calculated
+in rems (1 rem = 10px) and are converted to rem units before applying
+them to the elements' styles. The final JSX output of this component is
+a div containing the three parts: right inset div, the horizontal bar div,
+and the left inset div, with their respective styles based on the provided
+or default props.
 */
 
 import React, {useState} from "react";
