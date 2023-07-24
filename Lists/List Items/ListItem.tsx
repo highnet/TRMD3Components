@@ -1,3 +1,48 @@
+/*
+This code defines a React functional component called "ListItem" that represents
+a single item in a list. It is designed to be used within a list container like 
+the "List" component."title": The title or primary text content for the list item.
+"className": A string property to specify additional CSS classes for the list item.
+"id": A string property to provide an ID for the list item. "children": The
+additional supporting text content for the list item (optional). "onMouseEnter":
+A function to handle the mouse enter event on the list item. "onMouseLeave": A
+function to handle the mouse leave event on the list item. "onMouseMove": A
+function to handle the mouse move event on the list item. "onClick": A function
+to handle the click event on the list item. "size": A string property to specify
+the size variant of the list item ("1-line", "2-line", or "3-line").
+"leadingElement": A string to specify the type of leading element in the list
+item ("monogram", "icon", "image-small", "image-big", "checkbox", "radio", 
+"switch"). "leadingElementId": A string property to provide an ID for the 
+leading element. "showDivider": A boolean property to indicate whether a divider
+line should be shown below the list item. "leadingMonogramInitial": A string
+property to provide the initial character for the monogram leading element
+(optional). "imageSrc": A string property to specify the image source for the
+image-based leading elements (optional). "radioButtonGroupName": A string 
+property to specify the name of the radio button group (required if 
+leadingElement is "radio"). "radioButtonValue": A string property to specify 
+the value of the radio button (required if leadingElement is "radio").
+"trailingElementId": A string property to provide an ID for the trailing element.
+"trailingElement": A string to specify the type of trailing element in the 
+list item ("icon", "checkbox"). "iconName": A string property to specify the 
+name of the icon to be used in the leading and trailing elements.
+"elementSelected": A boolean property to indicate whether the element 
+(checkbox, radio, switch) is selected. "checkboxConfiguration": A string to 
+specify the configuration of the checkbox element (optional). "onElementChange": 
+A function to handle the change event on the element (checkbox, radio, switch).
+"onTrailingIconClick": A function to handle the click event on the trailing icon.
+Inside the "ListItem" component, various state hooks are used to handle and 
+manage the props and their default values. The "ListItem" component applies 
+theming based on the preferred theme stored in local storage, using the 
+"getPreferredScheme" function from the "../../Gizmos/Themeing" module. A 
+StringBuilder object is used to build the final CSS classes for the list item, 
+which includes classes for the type of leading element, the size variant, and 
+any additional class provided through the "className" prop. Based on the 
+"leadingElement" and "trailingElement" props, the component renders different 
+leading and trailing elements (monogram, icon, image, checkbox, radio, switch) 
+inside the list item. The "ListItem" component also handles mouse movements 
+within the list item by positioning an inner circle element.
+*/
+
 import React, {useEffect, useState, useRef} from "react";
 import {IListItemProps} from "./IlistItemProps";
 import {getPreferredScheme} from "../../Gizmos/Themeing";

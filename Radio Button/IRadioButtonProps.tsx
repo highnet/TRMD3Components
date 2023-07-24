@@ -1,19 +1,15 @@
-import { IComponentProps } from "../Component/IComponentProps";
-
 /*
-  1
-  1682423199
-
-  This code defines an interface for the properties that can be passed to a
-  React functional component called RadioButton. The interface includes several
-  props, such as onClick, name, value, and defaultChecked. The onClick prop is a
-  function that handles the click event of the radio button. The name and value
-  props define the name and value of the radio button, respectively. The
-  defaultChecked prop determines whether the radio button is checked by default.
-  The interface extends another interface called IComponentProps, which likely
-  includes more general properties that are common to all components in the
-  application.
+This code defines an interface for the RadioButton component in a React front-end
+application. The interface "IRadioButtonProps" extends the "IComponentProps"
+interface from the "../Component/IComponentProps" module, inheriting its
+properties. The RadioButton component represents a single radio button input,
+commonly used for selecting a single option from a list of choices. The interface
+defines optional properties for the RadioButton, including "name" to specify the
+name of the radio button group, "value" to set the value of the radio button,
+and "defaultChecked" to indicate if the radio button is initially checked.
 */
+
+import {IComponentProps} from "../Component/IComponentProps";
 
 export interface IRadioButtonProps extends IComponentProps {
 	name?: string;

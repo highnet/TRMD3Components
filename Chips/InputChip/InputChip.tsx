@@ -1,3 +1,23 @@
+/*
+This is a React component called "InputChip" that represents a user interface
+element commonly used for tags, selections, or actions. It takes in various
+props such as "id," "className," "children," "onClick," "selected,"
+"leadingIconName," "trailingIconName," "avatarIconNameDeselected,"
+"avatarIconNameSelected," "onMouseEnter," "onMouseLeave," and "onMouseMove."
+The component renders a button that combines textual content with optional icons
+and avatars. The selected state of the chip can be controlled by the "selected"
+prop, and the "onClick" prop allows handling click events. Depending on the
+presence of leading, trailing icons, and avatars, the component calculates a
+class name to apply specific styles. Inside the button, the chip can have an
+optional avatar displayed using the "avatarIconNameDeselected" and
+"avatarIconNameSelected" icons. If both avatar icons are provided, the component
+displays the appropriate one based on the selected state. The component also
+supports leading and trailing icons for additional actions or visual cues.
+It uses the "Icon" component to render icons, applying different styles based
+on the presence of icons and avatars. The "Typography" component is used to
+display the textual content of the chip.
+*/
+
 import React, {useState} from "react";
 import {IChipProps as IInputChipProps} from "./IInputChipProps";
 import {getPreferredScheme} from "../../Gizmos/Themeing";
